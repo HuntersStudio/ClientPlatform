@@ -4,4 +4,4 @@ La Base de Datos será utilizada para guardar los datos de los usuarios que se r
 
 
 ## Diagrama de la Base de Datos
-<img src="https://github.com/CreativeHuntersStudios/TheWanderingHunter/blob/main/Base%20de%20Datos/Images/DiagramaBDD.png">
+<img src="https://github.com/CreativeHuntersStudios/ClienteCreativeHunters/blob/main/Base%20de%20Datos/Images/DiagramaBDD.png">
