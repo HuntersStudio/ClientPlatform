@@ -1,0 +1,97 @@
+.menu {
+
+    position: fixed;
+    top: 0;
+    align-items: center;
+    width: 100%;
+    min-width: 350px;
+    min-height: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 0px 15px;
+    overflow: hidden;
+    background: gray;
+
+    & ul li {
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        border-left: 2px solid black;
+        transform: skew(-25deg);
+        &:first-child {
+            border-left: 2px solid black;
+        }
+        &:last-child {
+            border-right: 2px solid black;
+        }
+        &.active {
+            border-bottom-color: transparent;
+        }
+        & a {
+            transform: skew(15deg);
+        }
+    }
+}
+
+.menu li {
+    position: relative;
+    float: left;
+    line-height: 20px;
+    padding: 10px;
+    color: gray;
+    background-size: 100% 200%;
+    background-position: top center;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    transition: all .25s ease-in-out;
+
+    background-image: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(162,211,156, 1) 50%,
+        rgba(162,211,156,1) 95%,
+        rgba(124,197,118,1) 95%
+    );
+
+    &:hover {
+        background-position: bottom center;
+        color: rgba(0,0,0,.75);
+    }
+    & a {
+        color: #666;
+        display: block;
+        padding: 1rem 0;
+        transition: all .25s ease-in-out;
+    }
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.menu ul {
+    border: 0;
+    display: flex;
+    padding: 0 2rem;
+    position: relative;
+    left: -2rem;
+    width: calc(100% + 4rem);
+    & li {
+      background-image: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(68,140,203, 1) 50%,
+        rgba(68,140,203,1) 95%,
+        rgba(0,114,188,1) 95%
+        );
+      flex: 1 1 auto;
+      & a:hover {
+        color: #eee;
+      }
+    }
+}
