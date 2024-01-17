@@ -1,13 +1,14 @@
-.body {
+#body {
     display: flex;
     height: 100%;
 }
 
-.contex {
+#contex {
     display: flex;
     align-items: center;
     flex-direction: column;
-    border-left: 2px solid black;
+    border: 2px solid black;
     flex: 1;
+    
 }
 

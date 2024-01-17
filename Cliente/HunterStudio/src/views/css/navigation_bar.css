@@ -1,9 +1,10 @@
-.menu-lateral {
-    position: flex;
-    width: 30%;
-    flex: 0 0 auto;
-    order: 0;
-    transform: rotate(-35deg) skew(20deg,5deg);
+#menu-lateral {
+  display: flex;
+  position: flex;
+  width: 30%;
+  flex: 0 0 auto;
+  order: 0;
+  border: 2px solid black;
 }
 
 .list-item {

@@ -13,3 +13,9 @@ body {
     background: gray;
     overflow: hidden;
 }
+
+#contenedor {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
