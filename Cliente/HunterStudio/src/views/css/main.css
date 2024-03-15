@@ -12,4 +12,14 @@ body {
     align-items: center;
     background: gray;
     overflow: hidden;
+    z-index: 1;
+    position: absolute;
+}
+
+#contenedor {
+    width: 100%;
+    height: 100%;
+    margin-top: 13%;
+    z-index: 0;
+    position: absolute;
 }
