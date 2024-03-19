@@ -17,6 +17,8 @@ let new_product_window
 app.on('ready', () => {
     // Evento de inicio de la aplicacion que llama a los html
     main_window = new BrowserWindow({
+        width: 1280, // Ancho predeterminado de la ventana
+        height: 720, // Altura predeterminada de la ventana
         webPreferences: {
             contextIsolation: false,
             nodeIntegration: true,
