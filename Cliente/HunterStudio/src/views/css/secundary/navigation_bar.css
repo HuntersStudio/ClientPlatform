@@ -49,6 +49,7 @@
 
     /* Borde de abajo sin el raton encima */
     &:after {
+      border-left: 1px solid #060606; /* borde de abajo*/
       content: ''; /* Contenido vacio para que se vea el elemento*/
       position: absolute; /* Posicion */
       transition: all .25s linear; /* Pequeño delay como efecto especial*/
