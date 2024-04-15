@@ -3,6 +3,7 @@
     height: 12%;
     background-color: #ff6e42;
     margin-top: 1.5%;
+    transform: skew(15deg);
 }
 
 #info {
