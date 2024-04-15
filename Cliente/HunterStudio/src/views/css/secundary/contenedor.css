@@ -6,9 +6,8 @@
     border-top: 2px solid black;
 }
 
-#menu-leteral{
-    flex: 0; /* El div ocupará todo el espacio restante */
-    width: 100%;
+.menu-leteral {
+    width: 18%;
     background: black;
     z-index: 0;
     border-right:5px solid white;
@@ -16,9 +15,9 @@
 
 #contex {
     flex: 1; /* El div ocupará todo el espacio restante */
-    margin-top: 5%; /* Margen del 10% respecto al borde superior del contenedor */
     text-align: center; /* Centrar el texto horizontalmente */
     display: flex;
-    width: 100%;
     justify-content: center; /* Centrar horizontalmente */
+    height: 100vh;
+    background-color: azure;
 }

@@ -7,23 +7,24 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/secundary/navigation_bar.css" />
     <link rel="stylesheet" href="css/secundary/contenedor.css" />
+
+    <script src="../../controller/cargar_html.js"></script>
+
 </head>
 
 <body>
     <div class="body">
-        <aside id="menu-leteral">
-            <ul id="lista">
-                <li><a class="list-item" href="#">Elemento 1</a></li>
-                <li><a class="list-item" href="#">Elemento 2</a></li>
-                <li><a class="list-item" href="#">Elemento 3</a></li>
-                <li><a class="list-item" href="#">Elemento 4</a></li>
+        <aside class="menu-leteral">
+            <ul id="lista-lateral">
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/TWH.html', 'contex'); configurarLista(this);">The Wandering Hunter</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/TWH.html', 'contex'); configurarLista(this);">Aventuras de Rafael</a></li>
+                <li><a class="list-item" href="#" onclick="configurarLista(this);">Otros proyectos...</a></li>
             </ul>
         </aside>
 
         <div id="contex">
             PRUEBA
         </div>
-
     </div>
-    
+</body>
 </html>

@@ -7,29 +7,23 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/menu.css" />
+
+    <script src="../controller/cargar_html.js"></script>
+
 </head>
 
 <body>
     <nav class="menu">
-        <ul>
-            <li><a class="active" href="#" onclick="cargarContenido('./html/proyectos.html'); configurarBorde(this)">Productos</a></li>
-        </ul>
-        <ul>
-            <li><a href="#" onclick="cargarContenido('./html/club_miembros.html'); configurarBorde(this)">Club Socios</a></li>
-        </ul>
-        <ul>
-            <li><a href="#" onclick="cargarContenido('./html/rrss.html'); configurarBorde(this)">Contactos</a></li>
-        </ul>
-        <ul>
-            <li><a href="#" onclick="cargarContenido('./html/usuario.html'); configurarBorde(this)">Usuario</a></li>
+        <ul id="lista-menu">
+            <li><a href="#" onclick="cargarContenido('./html/proyectos.html', 'contenedor'); configurarBorde(this);">Productos</a></li>
+            <li><a href="#" onclick="cargarContenido('./html/club_miembros.html', 'contenedor'); configurarBorde(this);">Club Socios</a></li>
+            <li><a href="#" onclick="cargarContenido('./html/rrss.html', 'contenedor'); configurarBorde(this);">Contactos</a></li>
+            <li><a href="#" onclick="cargarContenido('./html/usuario.html', 'contenedor'); configurarBorde(this);">Usuario</a></li>
         </ul>
     </nav>
 
     <div id="contenedor">
-
+        
     </div>
-
-    <script src="../controller/cargar_html.js"></script>
 </body>
-
 </html>
