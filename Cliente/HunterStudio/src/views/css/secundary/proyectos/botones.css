@@ -33,7 +33,7 @@
     border-top-right-radius: 1px;
     border-bottom-right-radius: 1px;
     animation: span1 1.6s linear infinite;
-    animation-delay: 0.8s;
+    animation-delay: 0.6s;
 }
 
 @keyframes span1{
@@ -53,7 +53,7 @@
     border-bottom-left-radius: 1px;
     border-bottom-right-radius: 1px;
     animation: span2 1.6s linear infinite;
-    animation-delay: 1.6s;
+    animation-delay: 1.4s;
 }
 
 @keyframes span2{
@@ -74,7 +74,7 @@
     border-top-left-radius: 1px;
     border-bottom-left-radius: 1px;
     animation: span3 1.6s linear infinite;
-    animation-delay: 2.4s;
+    animation-delay: 0.6s;
 }
 
 @keyframes span3{
@@ -95,7 +95,7 @@
     border-top-right-radius: 1px;
     border-top-left-radius: 1px;
     animation: span4 1.6s linear infinite;
-    animation-delay: 3.2s;
+    animation-delay: 1.4s;
 }
 
 @keyframes span4{
@@ -121,5 +121,4 @@
     float: right;
     text-align: right;
     align-items: end;
-    right: 0;
 }

@@ -60,12 +60,14 @@
 
             &:first-child {
                 border-left: 0px solid black;
-                margin-left: -4%;
+                margin-left: -3%;
+                padding-left: 3%;
             }
 
             &:last-child {
                 border-right: 0px solid black;
                 margin-right: -3%;
+                padding-right: 3%;
             }
         }
     }

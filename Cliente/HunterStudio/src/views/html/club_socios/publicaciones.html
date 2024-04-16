@@ -4,24 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/secundary/club_socios/publicaciones.css" />
+    
     <title>Document</title>
+
 </head>
 <body>
-    <!-- https://www.youtube.com/watch?app=desktop&v=4FWyJCEQBrs HACER CARROUSEL EN HTML PARA LAS PUBLICACIONES -->
-    <!-- https://www.campusmvp.es/recursos/post/como-personalizar-los-estilos-css-de-las-barras-de-scroll.aspx  PERSONALIZAR LA SCRROL BAR -->
-    <!-- BUSCAR ALGUN VIDEO DE COMO PONER POST EN HTML PARA EL CARROUSEL, HASTA ENTONCES USAR IMAGENES-->
 
-    
+    <!-- https://www.youtube.com/watch?app=desktop&v=4FWyJCEQBrs HACER CARROUSEL EN HTML PARA LAS PUBLICACIONES -->
+    <!-- https://youtu.be/NbnSynwqplU?si=UODXtPuZCJKX6WBy PARTICULAS EN CSS -->
+    <!-- https://elements.envato.com/es/vanderick-fantasy-game-font-76K5FJA?_ga=2.108011781.680894902.1713259122-1910407575.1713259122&language_code=es&utm_nooverride=1 POSIBLE FUENTE GUAPA-->
+
     <div class="publicaciones">
     
-        <div id="destacadas">
+        <div class="destacadas">
             <h2>PUBLICACIONES DESTACADAS</h2>
 
-            <div id="dest_carrousel">
-                CARROUSEL
+            <div class="carousel">
+                <div class="item-carousel">
+                    <h2 class="titulo">ELEMENTOS</h2>
+                    <div class="linea-division"></div>
+                    <p class="descripcion">Fuego</p>
+                    <img src="../img/fuego.jpg" alt=""/>
+                </div>
+
+                <div class="item-carousel">
+                    <h2 class="titulo">ELEMENTOS</h2>
+                    <div class="linea-division"></div>
+                    <p class="descripcion">Agua</p>
+                    <img src="../img/agua.jpg" alt=""/>
+                </div>
+
+                <div class="item-carousel">
+                    <h2 class="titulo">ELEMENTOS</h2>
+                    <div class="linea-division"></div>
+                    <p class="descripcion">Tierra</p>
+                    <img src="../img/roca.jpg" alt=""/>
+                </div>
+
+                <div class="item-carousel">
+                    <h2 class="titulo">ELEMENTOS</h2>
+                    <div class="linea-division"></div>
+                    <p class="descripcion">Bosque</p>
+                    <img src="../img/bosque.jpg" alt=""/>
+                </div>
+
+                <div class="item-carousel">
+                    <h2 class="titulo">ELEMENTOS</h2>
+                    <div class="linea-division"></div>
+                    <p class="descripcion">Electricidad</p>
+                    <img src="../img/electricidad.jpg" alt=""/>
+                </div>
+
+                <div class="item-carousel">
+                    <h2 class="titulo">ELEMENTOS</h2>
+                    <div class="linea-division"></div>
+                    <p class="descripcion">Aire</p>
+                    <img src="../img/aire.jpg" alt=""/>
+                </div>
             </div>
         </div>
-
         
         <h2>PUBLICACIONES NORMALES</h2>
 
@@ -29,6 +70,12 @@
 
         </div>
     </div>
+
+    <!-- scrip para el carrousel de la parte de internet -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- script para el carrousel hecho a mano -->
+    <script src="../controller/carousel.js"></script>
 
 </body>
 </html>
