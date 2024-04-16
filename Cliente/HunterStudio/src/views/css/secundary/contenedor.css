@@ -10,14 +10,13 @@
     width: 18%;
     background: black;
     z-index: 0;
-    border-right:5px solid white;
 }
 
 #contex {
-    flex: 1; /* El div ocupará todo el espacio restante */
+    width: 80%;
     text-align: center; /* Centrar el texto horizontalmente */
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
     height: 100vh;
-    background-color: azure;
+    z-index: 0;
 }

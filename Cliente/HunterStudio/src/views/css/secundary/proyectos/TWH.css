@@ -1,0 +1,24 @@
+#jugar {
+    width: 100%;
+    height: 11.5%;
+    background-color: #ff6e42;
+    border: 1px solid black ;
+    border-left: 0px;
+    margin-top: 2.4%;
+    align-items: center;
+    display: flex;
+    order: 1;
+}
+
+#info {
+    width: 100%;
+    height: 100%;
+    order: 1;
+}
+
+#comunidad {
+    width: 40%;
+    height: 100%;
+    background-color: greenyellow;
+    order: 2;
+}

@@ -8,7 +8,6 @@
     border-radius: 10px;
     box-sizing: border-box;
     padding: 0px 15px;
-    overflow: hidden;
     border-radius: 0;
     background: gray;
 
@@ -27,14 +26,15 @@
             border-bottom: 2px solid black;
             transform: skew(-25deg);
             position: relative;
+            font-family: 'Lato';
+            font-weight: 600;
+            font-size: 25px;
             line-height: 20px;
             padding: 10px;
-            color: gray;
             flex: 1 1 auto;
             background-size: 100% 200%;
             background-position: top center;
             text-align: center;
-            text-decoration: none;
             transition: all .25s ease-in-out;
 
             background-image: linear-gradient(to bottom,

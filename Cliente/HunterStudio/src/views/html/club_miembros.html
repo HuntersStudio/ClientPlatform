@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/secundary/navigation_bar.css" />
+    <link rel="stylesheet" href="css/secundary/contenedor.css" />
+
+    <script src="../../controller/cargar_html.js"></script>
+
 </head>
 <body>
-    <h1>CLUM DE MIEMBROS</h1>
+    <div class="body">
+        <aside class="menu-leteral">
+            <ul id="lista-lateral">
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/club_socios/publicaciones.html', 'contex'); configurarLista(this);">TODOS</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/club_socios/TWH.html', 'contex'); configurarLista(this);">The Wandering Hunter</a></li>
+                <li><a class="list-item" href="#" onclick="configurarLista(this);">Futuros proyectos...</a></li>
+            </ul>
+        </aside>
+
+        <div id="contex">
+            PRUEBA
+        </div>
+    </div>
 </body>
 </html>

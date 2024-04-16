@@ -1,0 +1,14 @@
+.publicaciones {
+    margin-top: 3%;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}   
+
+#dest_carrousel {
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 20px;
+    margin-right: 4%;
+    margin-left: 4%;
+}
