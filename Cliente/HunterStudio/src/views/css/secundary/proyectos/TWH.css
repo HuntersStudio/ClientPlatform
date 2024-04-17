@@ -1,12 +1,12 @@
 #jugar {
     width: 100%;
     height: 11.5%;
+    display: flex;
+    justify-content: space-between;
     background-color: #ff6e42;
     border: 1px solid black ;
     border-left: 0px;
     margin-top: 2.4%;
-    text-align: center;
-    display: flex;
     order: 1;
 }
 
