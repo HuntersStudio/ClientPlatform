@@ -14,7 +14,8 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^28.1.2",
-    "electron-packager": "^17.1.2"
+    "electron-packager": "^17.1.2",
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "electron-builder": "^24.9.1",

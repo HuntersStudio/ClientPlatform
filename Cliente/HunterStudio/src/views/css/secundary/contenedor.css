@@ -18,5 +18,6 @@
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
     height: 100vh;
+    /* Poner imagen de fondo a futuro aqui en contex background-image: ; */
     z-index: 0;
 }
