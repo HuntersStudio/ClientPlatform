@@ -1,4 +1,4 @@
-@import url("https:fonts.googleapis.com/css2?family=Jostwght@400;700&display=swap");
+@import url(../../colores.css);
 
 .slider-container {
     padding-bottom: 8%;
@@ -47,12 +47,13 @@ h1 {
     font-weight: 700;
     text-align: left;
     text-transform: uppercase;
+    top: -40%;
     color: white;
-    position: absolute;
-    top: 50%;
-    left: -10%;
+    position: relative;
+    
+    left: -5%;
     transform: rotate(270deg);
-    transition: 0.7s ease;
+    transition: 1s ease;
 }
 
 .details {

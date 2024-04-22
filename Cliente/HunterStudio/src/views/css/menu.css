@@ -1,3 +1,5 @@
+@import url(./colores.css);
+
 .menu {
     position: fixed;
     top: 0;
@@ -9,7 +11,7 @@
     box-sizing: border-box;
     padding: 0px 15px;
     border-radius: 0;
-    background: gray;
+    background: var(--black);
 
     & ul {
         border: 0;
@@ -21,9 +23,9 @@
 
         & li {
             display: inline-block;
-            border-left: 2px solid black;
-            border-top: 3px solid black;
-            border-bottom: 2px solid black;
+            border-left: 1px solid var(--platinum);
+            border-top: 1px solid var(--platinum);
+            border-bottom: 1px solid var(--platinum);
             transform: skew(-25deg);
             position: relative;
             font-family: 'Lato';
@@ -37,14 +39,16 @@
             text-align: center;
             transition: all .25s ease-in-out;
 
+            /*
             background-image: linear-gradient(to bottom,
                     transparent 50%,
                     rgba(162, 211, 156, 1) 50%,
                     rgba(162, 211, 156, 1) 95%,
                     rgba(124, 197, 118, 1) 95%);
+            */
 
             &:hover {
-                background-position: bottom center;
+                background-color: var(--jade);
                 color: rgba(0, 0, 0, .75);
             }
 
@@ -53,22 +57,27 @@
                 transition: all .25s ease-in-out;
                 display: block;
                 text-decoration: none;
-                color: #fff;
+                color: var(--platinum);
                 text-transform: uppercase;
                 transform: skew(15deg);
             }
 
             &:first-child {
-                border-left: 0px solid black;
+                border-left: 0px solid var(--platinum);
                 margin-left: -3%;
                 padding-left: 3%;
             }
 
             &:last-child {
-                border-right: 0px solid black;
+                border-right: 0px solid var(--platinum);
                 margin-right: -3%;
                 padding-right: 3%;
             }
         }
     }
+}
+
+#element-clicked {
+    background-color: var(--castetlon);
+    border-bottom: 0px;
 }

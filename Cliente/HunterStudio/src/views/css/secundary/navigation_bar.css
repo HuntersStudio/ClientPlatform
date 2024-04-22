@@ -1,3 +1,5 @@
+@import url(../colores.css);
+
 #lista-lateral {
   z-index: 0; 
   position: absolute;
@@ -6,14 +8,18 @@
   height: 100%;
   flex: 0 0 auto;
   order: 0;
-  background-color: rgb(85, 85, 85);
+  background-color: var(--black);
+
+  /* background-color: rgb(85, 85, 85); */
 
   &:after {
     content: ''; /* Contenido vacio para que se vea el elemento*/
     position: absolute; /* Posicion */
     width: 12.4%;
     height: 100%;
-    background: #333333; 
+    background: var(--black);
+    border-left: 1px solid var(--platinum);
+    border-right: 1px solid var(--platinum);
     top: calc(0%); /* Posición vertical centrada */
     right: -11.9%; /* Posición a la derecha */
   }
@@ -23,10 +29,10 @@
   }
 
   & li:last-child a {
-    border-bottom: 1px solid black;
+      border-bottom: 1px solid var(--platinum);
     
     &::after{
-      border-right: 1px solid black;
+      border-right: 1px solid var(--platinum);
     }
   }
   /* COMO ACCEDER AL ALEMENTO LI - A - CLASS ITEM PARA MODIFICAR EL ULTIMO ELEMENTO*/
@@ -35,54 +41,47 @@
 .list-item {
   z-index: 1;
   font-size: 15px;
-  background: rgb(85, 85, 85);
+  background: var(--black);
   text-align: center;
   color: white; 
   max-height: 5em;
   line-height: 5em; /* Tamaño vertical de los botones */
-  border-top: 1px solid black;
+  border-top: 1px solid var(--platinum);
+  border-right: 1px solid var(--platinum);
   position: relative;
   display: block;
   text-decoration: none;
   transition: all .25s linear;
   
   &:hover {
-    background-color: #ff6e42;
-    border-left: 0px;
-    color: white;
+    background-color: var(--jade);
+    color: var(--platinum);
     
     &:after {
-      background-color: #ff6e42;
+      background-color: var(--castetlon);
     }
   }
 
   /* Borde de abajo sin el raton encima */
   &:after {
-    border-left: 1px solid black; /* borde de abajo*/
+    border-bottom: 1px solid var(--platinum);
+    border-left: 1px solid var(--platinum); /* borde de abajo*/
     content: ''; /* Contenido vacio para que se vea el elemento*/
     position: absolute; /* Posicion */
     transition: all .25s linear; /* Pequeño delay como efecto especial*/
     width: 24%;
     height: 55%; /* Grosor del borde */
-    background: #333333; /* Color del borde */
+    background: var(--black); /* Color del borde */
     top: calc(4.1%); /* Posición vertical centrada */
     right: -18%; /* Posición a la derecha */
     transform: rotate(45deg) skew(0, 45deg); /* Inclinacion de los bordes */
   }
-  
-  &:before {
-    height: 2.5em;
-    background-color: #333333;
-    top: .25em;
-    left: -.5em;
-    transform: skewY(-45deg);
-  }
 }
 
 #element-clicked {
-  background-color: #ff6e42;
+  background-color: var(--jade);
   
   &::after {
-      background-color: #ff6e42;
+      background-color: var(--castetlon);
   }
 }
