@@ -19,7 +19,7 @@
         padding: 0 2rem;
         position: relative;
         left: -2rem;
-        width: calc(100% + 4rem);
+        width: calc(100% + 5rem);
 
         & li {
             display: inline-block;

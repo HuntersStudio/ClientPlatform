@@ -85,20 +85,20 @@ svg {
     transform: translateY(30px);
     filter: blur(20px);
     opacity: 0;
-    animation: showContent .5s .7s ease-in-out 1 forwards;
+    animation: showContent .3s .5s ease-in-out 1 forwards;
 }
 
 .slider .list .item.active h2 {
-    animation-delay: 1s;
+    animation-delay: 1.2s;
 }
 
 .slider .list .item.active p:nth-child(3) {
-    animation-delay: 1.3s;
+    animation-delay: 1.8s;
 }
 
 .arrows {
     position: absolute;
-    top: 30%;
+    top: 45%;
     right: 50px;
     z-index: 100;
 }
@@ -112,7 +112,7 @@ svg {
     border-radius: 5px;
     font-size: x-large;
     color: var(--platinum);
-    transition: .5s;
+    transition: .3s;
 }
 
 .arrows button:hover {
@@ -141,7 +141,7 @@ svg {
     width: 125px;
     height: 200px;
     filter: brightness(.5);
-    transition: .5s;
+    transition: .3s;
     flex-shrink: 0;
 }
 

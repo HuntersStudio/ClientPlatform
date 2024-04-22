@@ -35,7 +35,6 @@ function configurarLista(enlaceClicado){
         var enlace = li.querySelector('a');
         // Operaciones en cada elemento li
         enlace.removeAttribute('id');
-        console.log(li);
     });
 
     // Resaltamos el elemento clicado
