@@ -7,12 +7,26 @@ function cargarContenido(url, claseContenedor) {
     // Utiliza fetch para obtener el contenido del archivo HTML
     fetch(url)
         .then(response => response.text())
-        .then(data => {
+        .then(htmlText => {
             // Selecciona el primer elemento que tenga la clase especificada
             var contenedor = document.getElementsByClassName(claseContenedor)[0];
             if (contenedor) {
                 // Inserta el contenido en el contenedor
-                contenedor.innerHTML = data;
+                contenedor.innerHTML = htmlText;
+
+                // Buscar y ejecutar los scripts en el contenido insertado
+                const scripts = contenedor.querySelectorAll('script');
+                scripts.forEach(script => {
+                    if (script.src) {
+                        // Si es un script externo, crear un nuevo elemento <script> y agregarlo al documento
+                        const newScript = document.createElement('script');
+                        newScript.src = script.src;
+                        document.body.appendChild(newScript);
+                    } else {
+                        // Si es un script interno, ejecutarlo con eval()
+                        eval(script.textContent);
+                    }
+                });
             } else {
                 console.error('No se encontró ningún elemento con la clase:', claseContenedor);
             }

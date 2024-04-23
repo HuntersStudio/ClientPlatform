@@ -5,10 +5,8 @@ button {
     align-self: center;
     background: linear-gradient(to left top, #64575d 50%, #888486 50%);
     border-style: none;
-    color:#fff;
+    color: var(--platinum);
     letter-spacing: 1px;
-    font-family: 'Lato';
-    font-weight: 400;
     outline: none;
     cursor: pointer;
     position: relative;
@@ -19,18 +17,16 @@ button {
 }
 
 #Bjugar {
-    font-size: large;
+    font-size: x-large;
     margin-left: 6%;
     width:170px;
     height:60px;
     align-self: center;
     background: linear-gradient(to left top, #64575d 50%, #888486 50%);
     border-style: none;
-    color:#fff;
+    color: var(--platinum);
     font-size: 23px;
     letter-spacing: 3px;
-    font-family: 'Lato';
-    font-weight: 600;
     outline: none;
     cursor: pointer;
     position: relative;

@@ -21,34 +21,33 @@
     border-radius: 6px;
 }
 
-.slider-image {
-    width: 100px;
+.slider-img {
+    width: 70px;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     transition: 0.7s ease;
 }
 
-.slider-images .slider-image, .slider-images .slider-image {
-    height: 480px;
+.slider-images .slider-img {
+    height: 400px;
 }
 
-.slider-image.active {
+.slider-img.active {
     width: 380px !important;
-    height: 500px !important;
 }
 
-.slider-image.active h1{
+.slider-img.active h1{
     display: none;
 }
 
 h1 {
     font-size: 40px;
-    font-weight: 700;
+    font-weight: 600;
     text-align: left;
     text-transform: uppercase;
     top: -40%;
-    color: white;
+    color: var(--platinum);
     position: relative;
     
     left: -5%;

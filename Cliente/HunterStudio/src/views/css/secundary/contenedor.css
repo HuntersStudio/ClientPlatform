@@ -1,6 +1,7 @@
 @import url(../colores.css);
 
 .body {
+    margin-top: 0.5%;
     display: flex;
     justify-content: space-between;
     width: 100%;

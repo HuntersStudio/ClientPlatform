@@ -130,6 +130,7 @@ svg {
     height: 250px;
     padding: 0 50px; 
     box-sizing: border-box;
+    overflow: auto;
     justify-content: right;
 }
 
