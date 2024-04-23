@@ -50,6 +50,7 @@
 }
 
 .slider-img.active .details {
+    transition: 1.2s ease-in;
     align-items: center;
     text-align: center;
     top: 30%;
