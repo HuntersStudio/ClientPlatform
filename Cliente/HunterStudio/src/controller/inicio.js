@@ -27,7 +27,7 @@ let refreshInterval = setInterval(() => {
 
 function showSlider() {
 
-    var elemento = document.querySelector(".active");
+    var elemento = document.querySelector(".slider .list .item.active");
 
     if(elemento != null){
         let itemActiveOld = document.querySelector('.slider .list .item.active');

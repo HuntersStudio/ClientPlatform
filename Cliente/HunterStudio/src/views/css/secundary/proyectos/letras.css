@@ -1,0 +1,59 @@
+.fuego {
+  text-shadow: 0px 0px 10px #EACC32, /* Primer resplandor */ 
+               4px 2px 12px #EACC32, 
+               -4px 2px 12px #EACC32, /* Parte de luz */ 
+               0px -6px 14px #FF2600, 
+               0px -12px 14px #FF2600, 
+               0px -20px 14px #FF2600, /* Subida del fuego */ 
+               0px -30px 14px #848586; /* Azuleo de la llama */
+}
+
+.agua {
+  text-shadow: 0px 0px 10px #00E3FF, /* Primer resplandor */ 
+               4px 2px 12px #00E3FF, 
+               -4px 2px 12px #00E3FF, /* Parte de luz */ 
+               0px -6px 14px #0008FF, 
+               0px -12px 14px #0008FF, 
+               0px -20px 14px #0008FF, /* Subida del fuego */ 
+               0px -30px 14px #FFF; /* Azuleo de la llama */
+}
+
+.aire {
+  text-shadow: 0px 0px 10px #8EE5EE, /* Primer resplandor */ 
+               4px 2px 12px #8EE5EE, 
+               -4px 2px 12px #8EE5EE, /* Parte de luz */ 
+               0px -6px 14px #48D1CC, 
+               0px -12px 14px #48D1CC, 
+               0px -20px 14px #48D1CC, /* Subida del fuego */ 
+               0px -30px 14px #FFF; /* Azuleo de la llama */
+}
+
+.bosque {
+  text-shadow: 0px 0px 10px #008000, /* Primer resplandor */ 
+               4px 2px 12px #008000, 
+               -4px 2px 12px #008000, /* Parte de luz */ 
+               0px -6px 14px #004C00, 
+               0px -12px 14px #004C00, 
+               0px -20px 14px #004C00, /* Subida del fuego */ 
+               0px -30px 14px #000000; /* Azuleo de la llama */
+}
+
+.electricidad {
+  text-shadow: 0px 0px 10px #9B30FF, /* Primer resplandor */ 
+               4px 2px 12px #9B30FF, 
+               -4px 2px 12px #9B30FF, /* Parte de luz */ 
+               0px -6px 14px #7500FF, 
+               0px -12px 14px #7500FF, 
+               0px -20px 14px #7500FF, /* Subida del fuego */ 
+               0px -30px 14px #FFF; /* Azuleo de la llama */
+}
+
+.roca {
+  text-shadow: 0px 0px 10px #808080, /* Primer resplandor */ 
+               4px 2px 12px #808080, 
+               -4px 2px 12px #808080, /* Parte de luz */ 
+               0px -6px 14px #4F4F4F, 
+               0px -12px 14px #4F4F4F, 
+               0px -20px 14px #4F4F4F, /* Subida del fuego */ 
+               0px -30px 14px #000000; /* Azuleo de la llama */
+}
