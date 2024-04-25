@@ -66,12 +66,14 @@
                 border-left: 0px solid var(--platinum);
                 margin-left: -3%;
                 padding-left: 3%;
+                padding-right: 2%;
             }
 
             &:last-child {
                 border-right: 0px solid var(--platinum);
-                margin-right: -3%;
-                padding-right: 3%;
+                margin-right: -2%;
+                padding-right: 4%;
+                padding-left: 2%;
             }
         }
     }
