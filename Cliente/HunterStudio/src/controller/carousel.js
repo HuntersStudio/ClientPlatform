@@ -1,7 +1,29 @@
-const carousel_controller = document.querySelectorAll('.carousel');
-const carousel_controls_controller = document.querySelectorAll('.carousel-controls');
-const carousel_controls = ['prev', 'next'];
-const carousel_items = document.querySelectorAll('.item-carousel');
+let carousel_controller = document.querySelectorAll('.carousel');
+let carousel_controls_controller = document.querySelectorAll('.carousel-controls');
+let carousel_items = document.querySelectorAll('.item-carousel');
+let contItem = items.length;
+let itemActive = 0;
+
+
+function showCarousel() {
+
+    // Añade la clase 'active' al ítem y miniatura activos
+    items[itemActive].classList.add('active');
+    thumbnails[itemActive].classList.add('active');
+
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(() => {
+        next.click();
+    }, 8000);
+}
+
+carousel_items.forEach((carousel_items, index) => {
+    carousel_items.addEventListener('click', () => {
+        itemActive = index;
+        showCarousel();
+    });
+});
+
 
 class Carousel {
 
