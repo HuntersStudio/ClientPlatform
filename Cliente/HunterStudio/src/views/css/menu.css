@@ -65,15 +65,14 @@
             &:first-child {
                 border-left: 0px solid var(--platinum);
                 margin-left: -3%;
-                padding-left: 3%;
-                padding-right: 2%;
+                padding-left: 1%;
             }
+
+            
 
             &:last-child {
                 border-right: 0px solid var(--platinum);
                 margin-right: -2%;
-                padding-right: 4%;
-                padding-left: 2%;
             }
         }
     }

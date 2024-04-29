@@ -2,7 +2,6 @@
 @import url(../../colores.css);
 
 .publicaciones {
-    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -11,6 +10,18 @@
     flex-direction: column;
     margin-bottom: 100px;
     overflow-x: hidden;
+}
+
+.destacadas {
+    height: 1000px;
+    align-items: center;
+}
+
+.lista-publicaciones {
+    margin-top: 1000px;
+    height: 1000px;
+    flex-direction: column;
+    align-items: center;
 }
 
 a {
@@ -22,17 +33,19 @@ input {
 }
 
 .cards {
-    position: relative;
+    margin-top: 5%;
+    margin-left: 7%;
+    position: absolute;
     height: 420px;
     width: 320px;
     margin-bottom: 20px;
-    perspective: 1000px;
+    perspective: 2000px;
     transform-style: preserve-3d;
 }
 
 .cards label{
     position: absolute;
-    width: 430px;
+    width: 320px;
     left: 0;
     right: 0;
     margin: auto;
@@ -40,31 +53,31 @@ input {
     transition: transform .55s ease-in-out;
 }
 
-.cards label:nth-child(1) {
-    cursor: auto;
-}
-
 .cards .card {
-    position: relative;
-    height: 100%;
+    position: absolute;
+    height: 420px;
+    width: 320px;
     background-color: var(--castetlon);
+    background-size: 320px 420px;
+    background-repeat: no-repeat;
     border-radius: 10px;
     padding: 30px 35px;
 }
 
 .cards .image {
+    position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .cards .image img {
     border-radius: 5px;
     box-shadow: 15px 15px 40px rgb(0, 0, 0, 45%);
-    margin-top: 23px;
-    width: 86%;
-    height: 220px;
-    object-fit: cover;
+    margin-top: 10px;
+    height: 400px;
+    width: 300px;
     transition: all .7s;
+    z-index: 0;
 }
 
 .cards .imgae img:hover {
@@ -79,6 +92,7 @@ input {
     width: 10px;
     height: 10px;
     border-radius: 50%;
+    margin-left: 15px;
     margin-bottom: 10px;
 }
 
@@ -96,24 +110,29 @@ input {
 
 .cards .infos {
     display: block;
-    text-align: end;
     padding-top: 60px;
+    opacity: 0;
 }
 
 .cards .infos span {
+    filter: brightness(1.2);
     display: block;    
 }
 
 .infos .name {
-    font-size: 30px;
+    filter: brightness(1.2);
+    text-align: start;
+    font-size: 20px;
+    font-weight: 200;
     color: var(--platinum);
-    letter-spacing: 8px;
+    letter-spacing: 4px;
     margin-bottom: 20px;
-    padding-left: 25%;
+    padding-left: 5%;
     transition: all .6s ease;
 }
 
 .card .lorem {
+    text-align: left;
     font-size: 15px;
     color: var(--platinum);
     letter-spacing: 3px;
@@ -122,7 +141,7 @@ input {
 .cards .btn-details {
     width: 100%;
     height: 60px;
-    margin: 35px auto;
+    margin: 160px auto;
     border-radius: 5px;
     background-color: var(--current-color1);
     display: flex;
@@ -130,7 +149,7 @@ input {
     justify-content: center;
     color: var(--platinum);
     font-size: 25px;
-    letter-spacing: 10px;
+    letter-spacing: 6px;
     font-weight: 700;
     transition: all .7s ease;
 }
