@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Document</title> 
+    
+    <link rel="stylesheet" href="css/secundary/navigation_bar.css" />
+    <link rel="stylesheet" href="css/secundary/contenedor.css" />
 </head>
+
 <body>
-    <h1>USUARIO</h1>
+
+    <div class="body">
+        <aside class="menu-leteral">
+            <ul id="lista-lateral">
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/usuario/general.html', 'contex'); configurarLista(this);">General</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/usuario/general.html', 'contex'); configurarLista(this);">Publicaciones</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/usuario/general.html', 'contex'); configurarLista(this);">Inventario</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/usuario/logros.html', 'contex'); configurarLista(this);">Logros</a></li>
+                <li><a class="list-item" href="#" onclick="configurarLista(this);">Otros proyectos...</a></li>
+            </ul>
+        </aside>
+
+        <div class="contex">
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Llama a cargarContenido al cargar la página
+            cargarContenido('./html/proyectos/TWH.html', 'contex');
+        });
+    </script>
+
 </body>
-</html>
+</html> 

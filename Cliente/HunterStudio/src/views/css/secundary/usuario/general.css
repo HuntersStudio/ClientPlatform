@@ -1,0 +1,52 @@
+@import url(../../colores.css);
+
+
+.general {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+}
+
+.usuario {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    background-color: antiquewhite;
+}
+
+.usuario img {
+    position: relative;
+    left: 5%;
+    margin-right: 10px;
+    width: 150px;
+    height: 150px; 
+}
+
+.username {
+    top: 5%;
+    margin-left: 35%;
+    margin: 15px;
+}
+
+.categoria {
+    margin: 15px;
+}
+
+.registro {
+    margin: 15px;
+}
+
+.datos {
+    width: 100%;
+    height: 20%;
+    background-color: aquamarine;
+}
+
+.actividad {
+    width: 100%;
+    height: 35%;
+    background-color: blueviolet;
+}
