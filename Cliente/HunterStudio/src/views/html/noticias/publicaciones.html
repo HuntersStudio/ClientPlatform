@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/secundary/noticias/publicaciones.css" />
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'> 
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'> 
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel="stylesheet" href="css/secundary/noticias/destacadas.css" />
     <title>Document</title>
 
 </head>
@@ -26,9 +24,10 @@
                 <input type="radio" name="slider" id="s4">
                 <input type="radio" name="slider" id="s5">
 
-                <div class="cards">
+                <div class="cards_destacadas">
                     <label for="s1" id="slide1">
-                        <div class="card" style="background-image: url('../img/publicaciones/destacadas/img1.jpg');">
+                        <div class="card_destacadas" style="background-image: url('../img/publicaciones/destacadas/img1.jpg');">
+                            <button class="expand-button" onclick="expand_card()"><i class="fi fi-ts-angle-small-down"></i></button>
                             <div class="infos">
                                 <span class="name">Publicacion 1</span>
                                 <span class="lorem">Texto de ejemplo de pie de foto</span>
@@ -38,7 +37,8 @@
                         </div>
                     </label>
                     <label for="s2" id="slide2">
-                        <div class="card" style="background-image: url('../img/publicaciones/destacadas/img2.jpg');">
+                        <div class="card_destacadas" style="background-image: url('../img/publicaciones/destacadas/img2.jpg');">
+                            <button class="expand-button" onclick="expand_card()"><i class="fi fi-ts-angle-small-down"></i></button>
                             <div class="infos">
                                 <span class="name">Publicacion 2</span>
                                 <span class="lorem">Texto de ejemplo de pie de foto</span>
@@ -48,7 +48,8 @@
                         </div>
                     </label>
                     <label for="s3" id="slide3">
-                        <div class="card" style="background-image: url('../img/publicaciones/destacadas/img3.jpg');">
+                        <div class="card_destacadas" style="background-image: url('../img/publicaciones/destacadas/img3.jpg');">
+                            <button class="expand-button" onclick="expand_card()"><i class="fi fi-ts-angle-small-down"></i></button>
                             <div class="infos">
                                 <span class="name">Publicacion 3</span>
                                 <span class="lorem">Texto de ejemplo de pie de foto</span>
@@ -58,7 +59,8 @@
                         </div>
                     </label>
                     <label for="s4" id="slide4">
-                        <div class="card" style="background-image: url('../img/publicaciones/destacadas/img4.jpg');">
+                        <div class="card_destacadas" style="background-image: url('../img/publicaciones/destacadas/img4.jpg');">
+                            <button class="expand-button" onclick="expand_card()"><i class="fi fi-ts-angle-small-down"></i></button>
                             <div class="infos">
                                 <span class="name">Publicacion 4</span>
                                 <span class="lorem">Texto de ejemplo de pie de foto</span>
@@ -68,7 +70,8 @@
                         </div>
                     </label>
                     <label for="s5" id="slide5">
-                        <div class="card" style="background-image: url('../img/publicaciones/destacadas/img5.jpg');">
+                        <div class="card_destacadas" style="background-image: url('../img/publicaciones/destacadas/img5.jpg');">
+                            <button class="expand-button" onclick="expand_card()"><i class="fi fi-ts-angle-small-down"></i></button>
                             <div class="infos">
                                 <span class="name">Publicacion 5</span>
                                 <span class="lorem">Texto de ejemplo de pie de foto</span>
@@ -81,13 +84,13 @@
 
             </div>
         </div>
-        <!--
         <div class="lista-publicaciones">
+            <h1>PUBLICACIONES NORMALES</h1>
             <div class="cards">
                 <label for="l1" id="l1">
                     <div class="card">
                         <div class="image">
-                            <img src="../img/publicaciones/destacadas/img1.jpg" alt="">
+                            <img src="../img/publicaciones/img1.jpg" alt="">
                             <div class="dots">
                                 <div></div>
                                 <div></div>
@@ -109,10 +112,61 @@
                         </div>
                     </div>
                 </label>
+                <label for="l2" id="l2">
+                    <div class="card">
+                        <div class="image">
+                            <img src="../img/publicaciones/img2.jpg" alt="">
+                            <div class="dots">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="infos">
+                            <span class="name">Publicacion 2</span>
+                            <span class="lorem">Texto de ejemplo de pie de foto</span>
+                            
+                            <a href="details" class="btn-details">Saber mas</a>
+                            
+                            <div class="actions">
+                                <i class="fi fi-rr-home"></i>
+                                <i class="fi fi-ss-user"></i>
+                                <i class="fi fi-sr-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <label for="l3" id="l3">
+                    <div class="card">
+                        <div class="image">
+                            <img src="../img/publicaciones/img3.jpg" alt="">
+                            <div class="dots">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+
+                        <div class="infos">
+                            <span class="name">Publicacion 3</span>
+                            <span class="lorem">Texto de ejemplo de pie de foto</span>
+                            
+                            <a href="details" class="btn-details">Saber mas</a>
+                            
+                            <div class="actions">
+                                <i class="fi fi-rr-home"></i>
+                                <i class="fi fi-ss-user"></i>
+                                <i class="fi fi-sr-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </label>
             </div>
-            -->
         </div>
     </div>
+
+    <script src="../controller/carousel.js"></script>
 
 </body>
 </html>

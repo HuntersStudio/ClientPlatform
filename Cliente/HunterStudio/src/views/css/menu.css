@@ -39,14 +39,6 @@
             text-align: center;
             transition: all .25s ease-in-out;
 
-            /*
-            background-image: linear-gradient(to bottom,
-                    transparent 50%,
-                    rgba(162, 211, 156, 1) 50%,
-                    rgba(162, 211, 156, 1) 95%,
-                    rgba(124, 197, 118, 1) 95%);
-            */
-
             &:hover {
                 background-color: var(--jade);
                 color: rgba(0, 0, 0, .75);
@@ -68,8 +60,6 @@
                 padding-left: 1%;
             }
 
-            
-
             &:last-child {
                 border-right: 0px solid var(--platinum);
                 margin-right: -2%;
@@ -78,7 +68,7 @@
     }
 }
 
-#element-clicked {
+#menu_clicked {
     background-color: var(--castetlon);
     border-bottom: 0px;
 }

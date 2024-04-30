@@ -7,7 +7,6 @@ button {
     border-style: none;
     color: var(--platinum);
     letter-spacing: 1px;
-    outline: none;
     cursor: pointer;
     position: relative;
     padding: 0px;
@@ -18,20 +17,16 @@ button {
 
 #Bjugar {
     font-size: x-large;
-    margin-left: 6%;
+    left: 50px;
     width:170px;
     height:60px;
-    align-self: center;
     background: linear-gradient(to left top, #64575d 50%, #888486 50%);
     border-style: none;
     color: var(--platinum);
     font-size: 23px;
     letter-spacing: 3px;
-    outline: none;
     cursor: pointer;
-    position: relative;
     padding: 0px;
-    overflow: hidden;
     transition: all .5s;
     box-shadow: 0px 1px 2px rgba(0,0,0,.2);
 }
@@ -127,8 +122,7 @@ button {
 #Bjugar:hover{
     transition: all .5s;
     box-shadow: 0px 3px 5px rgba(0,0,0,.4);
-    width:180px;
-    height:65px;
+    transform:  scale(1.1);
     font-size: 25px;
 }
 

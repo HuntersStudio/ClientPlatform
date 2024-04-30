@@ -17,10 +17,18 @@
         https://youtu.be/vTu2HQrXtyw?si=Nmrq3Dt_l4UPF8D8 
     -->
 
+    <!-- FUENTES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap">
 
+    <!-- ICONOS -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'> 
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'> 
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-straight/css/uicons-thin-straight.css'>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/menu.css" />
 </head>
@@ -28,16 +36,27 @@
 <body>
     <nav class="menu">
         <ul id="lista-menu">
-            <li><a href="" >Inicio</a></li>
-            <li><a href="#" onclick="cargarContenido('./html/proyectos.html', 'contenedor'); configurarBorde(this);">SKAYA</a></li>
-            <li><a href="#" onclick="cargarContenido('./html/noticias.html', 'contenedor'); configurarBorde(this);">Noticias</a></li>
-            <li><a href="#" onclick="cargarContenido('./html/foro.html', 'contenedor'); configurarBorde(this);">Foro</a></li>
-            <li><a href="#" onclick="cargarContenido('./html/usuario.html', 'contenedor'); configurarBorde(this);">Usuario</a></li>
+            <li><a href="">Inicio</a></li>
+            <li><a href="#" onclick="cargarContenido('./html/proyectos.html', 'contenedor'); configurarBorde(this);">SKAYA</a>
+            </li>
+            <li><a href="#" onclick="cargarContenido('./html/noticias.html', 'contenedor'); configurarBorde(this);">Noticias</a>
+            </li>
+            <li><a href="#" onclick="cargarContenido('./html/foro.html', 'contenedor'); configurarBorde(this);">Foro</a>
+            </li>
+            <li><a href="#" onclick="cargarContenido('./html/usuario.html', 'contenedor'); configurarBorde(this);">Usuario</a>
+            </li>
         </ul>
     </nav>
 
     <div class="contenedor">
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Llama a cargarContenido al cargar la página
+            cargarContenido('./html/inicio.html', 'contenedor');
+        });
+    </script>
 
     <!-- script para cargar el html en el contenedor indicado al clicar en las listas -->
     <script src="../controller/cargar_html.js"></script>

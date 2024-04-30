@@ -1,8 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Llama a cargarContenido al cargar la página
-    cargarContenido('./html/inicio.html', 'contenedor');
-});
-
 function cargarContenido(url, claseContenedor) {
     // Utiliza fetch para obtener el contenido del archivo HTML
     fetch(url)
@@ -52,7 +47,7 @@ function configurarLista(enlaceClicado){
     });
 
     // Resaltamos el elemento clicado
-    enlaceClicado.setAttribute('id', 'element-clicked');
+    enlaceClicado.setAttribute('id', 'nav_bar_clicked');
 }
 
 function configurarBorde(enlaceClicado){
@@ -68,5 +63,5 @@ function configurarBorde(enlaceClicado){
     var liPadre = enlaceClicado.parentNode;
 
     // Ponemos el borde del fondo en transparente
-    liPadre.setAttribute('id','element-clicked');
+    liPadre.setAttribute('id','menu_clicked');
 }

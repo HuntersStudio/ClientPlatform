@@ -78,7 +78,7 @@
   }
 }
 
-#element-clicked {
+#nav_bar_clicked {
   background-color: var(--jade);
   
   &::after {
