@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function () {
+    // Llama a cargarContenido al cargar la página
+    cargarContenido('./html/inicio.html', 'contenedor');
+});
+
 function cargarContenido(url, claseContenedor) {
     // Utiliza fetch para obtener el contenido del archivo HTML
     fetch(url)

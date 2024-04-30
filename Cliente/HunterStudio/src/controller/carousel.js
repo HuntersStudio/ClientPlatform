@@ -3,7 +3,7 @@ function expand_card() {
 
     expandButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const card = this.closest('.card');
+            const card = this.closest('.card_destacadas'); // Corregir la clase aquí
             card.classList.toggle('expanded');
         });
     });
