@@ -28,7 +28,7 @@
             border-bottom: 1px solid var(--platinum);
             transform: skew(-25deg);
             position: relative;
-            font-family: 'Lato';
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-weight: 600;
             font-size: 25px;
             line-height: 20px;

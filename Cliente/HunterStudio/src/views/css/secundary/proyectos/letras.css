@@ -36,7 +36,7 @@
                -4px 2px 12px #008000, /* Parte de luz */ 
                0px -6px 14px #004C00, 
                0px -12px 14px #004C00, 
-               0px -20px 14px var(--ojos-lucia), /* Subida del fuego */ 
+               0px -20px 14px var(--green-xd), /* Subida del fuego */ 
                0px -30px 14px #000000; /* Azuleo de la llama */
 }
 
