@@ -101,6 +101,7 @@ button:hover {
 }
 
 .datos .password i{
+    user-select: none;
     padding-left: 10px; 
     color: var(--platinum);
     font-size: 16px;
@@ -127,6 +128,11 @@ button:hover {
     display: flex;
 }
 
+.TWH img {
+    height: 100px;
+    width: 100px;
+}
+
 .TWH .info{
     margin-left: 20px;
     width: 100%;
@@ -148,9 +154,23 @@ button:hover {
 
 .TWH .info .logros {
     padding-top: 40px;
+    justify-content: space-between;
 }
 
-.TWH img {
-    height: 100px;
-    width: 100px;
+.TWH .progress_bar {
+    position: relative;
+    width: 100%;
+    height: 6px;
+    border-radius: 6px;
+    border: 1px solid var(--platinum);
+    background-color: var(--black);
+    margin: 5px 0;
+}
+
+.TWH .progress_bar::before {
+    content: '';
+    position: absolute;
+    width: var(--wth);
+    height: 100%;
+    background-color: aqua;
 }

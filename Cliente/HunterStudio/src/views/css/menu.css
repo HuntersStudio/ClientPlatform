@@ -4,14 +4,13 @@
     user-select: none;
     position: fixed;
     top: 0;
-    align-items: top;
     width: 100%;
-    min-height: 80px;
+    height: 75px;
     display: grid;
     border-radius: 10px;
-    box-sizing: border-box;
     padding: 0px 15px;
     border-radius: 0;
+    z-index: 1;
 
     & ul {
         border: 0;
