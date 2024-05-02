@@ -1,6 +1,7 @@
 @import url(./colores.css);
 
 .menu {
+    user-select: none;
     position: fixed;
     top: 0;
     align-items: top;
@@ -11,7 +12,6 @@
     box-sizing: border-box;
     padding: 0px 15px;
     border-radius: 0;
-    background: var(--black);
 
     & ul {
         border: 0;
@@ -29,7 +29,7 @@
             transform: skew(-25deg);
             position: relative;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            font-weight: 600;
+            font-weight: 100;
             font-size: 25px;
             line-height: 20px;
             padding: 10px;
@@ -51,7 +51,7 @@
                 text-decoration: none;
                 color: var(--platinum);
                 text-transform: uppercase;
-                transform: skew(15deg);
+                transform: skew(15deg); /* Efecto de tumbar las letras, 25 para que esten rectas*/
             }
 
             &:first-child {

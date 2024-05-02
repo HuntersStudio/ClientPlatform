@@ -1,6 +1,7 @@
 @import url(../colores.css);
 
 #lista-lateral {
+  user-select: none;
   z-index: 0; 
   position: absolute;
   position: flex;

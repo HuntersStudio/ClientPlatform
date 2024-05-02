@@ -122,7 +122,7 @@ button {
 #Bjugar:hover{
     transition: all .5s;
     box-shadow: 0px 3px 5px rgba(0,0,0,.4);
-    transform:  scale(1.1);
+    transform:  scale(1.03);
     font-size: 25px;
 }
 

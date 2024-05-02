@@ -4,49 +4,153 @@
 .general {
     width: 100%;
     height: 100%;
+    margin-left: 50px;
+    text-align: left;
     flex-direction: column;
     justify-content: center;
     display: flex;
 }
 
+button {
+    position: absolute;
+    right: 50px;
+    text-align: right;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid var(--platinum);
+    background-color: var(--black);
+    color: var(--platinum);
+    user-select: none;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--platinum);
+    color: var(--black);
+    transition: 0.8s ease;
+}
+
+
 .usuario {
     width: 100%;
     height: 35%;
-    display: flex;
+    margin-top: -10%;
     align-items: center;
-    background-color: antiquewhite;
+    justify-content: start;
+    display: flex;
+}
+
+.usuario .info {
+    width: 100%;
+    display: block;
+    text-align: left;
+    font-size: 22px;
 }
 
 .usuario img {
     position: relative;
-    left: 5%;
     margin-right: 10px;
     width: 150px;
     height: 150px; 
+    border-radius: 10px;
 }
 
 .username {
-    top: 5%;
-    margin-left: 35%;
+    position: relative;
+    margin: 15px;
+    font-size: 50px;
+}
+
+.usuario .registro {
+    padding-top: 20px;
     margin: 15px;
 }
 
-.categoria {
-    margin: 15px;
-}
-
-.registro {
-    margin: 15px;
-}
 
 .datos {
     width: 100%;
     height: 20%;
-    background-color: aquamarine;
+    align-items: center;
+    justify-content: start;
+    display: block;
+    text-align: left;
+    font-size: 22px;
 }
+
+.datos .mail #user_mail,
+.datos .password #user_password {
+    padding-left: 10px; 
+}
+
+.datos .password {
+    padding-top: 30px;
+}
+
+.datos .password #user_password {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 150px;
+    font-size: 22px;
+    color: var(--platinum);
+
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.datos .password i{
+    padding-left: 10px; 
+    color: var(--platinum);
+    font-size: 16px;
+}
+
 
 .actividad {
     width: 100%;
     height: 35%;
-    background-color: blueviolet;
+    font-size: 25px;
+}
+
+.progresos {
+    margin-top: 20px;
+    margin-left: 25px;
+}
+
+.TWH {
+    display: flex;
+    padding: 20px;
+    height: 140px;
+    width: 90%;
+    border: 1px solid var(--platinum);
+    display: flex;
+}
+
+.TWH .info{
+    margin-left: 20px;
+    width: 100%;
+    display: block;
+    text-align: left;
+    font-size: 18px;
+}
+
+.TWH .info .titulo {
+    font-size: 22px;
+}
+
+.TWH .info .horas {
+    position: absolute;
+    right: 120px;
+    text-align: right;
+    text-align: center;
+}
+
+.TWH .info .logros {
+    padding-top: 40px;
+}
+
+.TWH img {
+    height: 100px;
+    width: 100px;
 }
