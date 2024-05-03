@@ -1,16 +1,16 @@
-function mostrar(passwordFieldId, iconId) {
-    const campoContraseña = document.getElementById(passwordFieldId);
-    const icono = document.getElementById(iconId);
+function mostrar(icono, passwordClass) {
+    const campoContraseñaClass = passwordClass;
+    const campoContraseña = icono.parentElement.querySelector('.' + campoContraseñaClass);
 
-    if (campoContraseña && icono) {
+    if (campoContraseña) {
         if (campoContraseña.type === 'password') {
-            campoContraseña.type = 'text'; // Muestra la contraseña
-            icono.classList.remove('fi-rr-eye-crossed'); // Elimina la clase para mostrar una X
-            icono.classList.add('fi-rr-eye'); // Añade la clase para mostrar un ojo
+            campoContraseña.type = 'text';
+            icono.classList.remove('fi-rr-eye-crossed');
+            icono.classList.add('fi-rr-eye');
         } else {
-            campoContraseña.type = 'password'; // Oculta la contraseña
-            icono.classList.remove('fi-rr-eye'); // Elimina la clase para mostrar un ojo
-            icono.classList.add('fi-rr-eye-crossed'); // Añade la clase para mostrar una X
+            campoContraseña.type = 'password';
+            icono.classList.remove('fi-rr-eye');
+            icono.classList.add('fi-rr-eye-crossed');
         }
     }
 }

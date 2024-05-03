@@ -77,8 +77,8 @@ button:hover {
     font-size: 22px;
 }
 
-.datos .mail #user_mail,
-.datos .password #user_password {
+.datos .mail .user_mail,
+.datos .password .user_password {
     padding-left: 10px; 
 }
 
@@ -86,7 +86,7 @@ button:hover {
     padding-top: 30px;
 }
 
-.datos .password #user_password {
+.datos .password .user_password {
     background-color: transparent;
     border: none;
     outline: none;

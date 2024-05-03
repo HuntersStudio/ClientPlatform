@@ -1,3 +1,5 @@
+@import url(../../colores.css);
+
 .fuego {
   text-shadow: 0px 0px 10px #EACC32, /* Primer resplandor */ 
                4px 2px 12px #EACC32, 

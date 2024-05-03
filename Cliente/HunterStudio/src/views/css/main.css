@@ -49,8 +49,9 @@ body {
 
 .fondo .particles {
     position: relative;
-    width: 30px;
-    height: 30px;
+    filter: blur(.8);
+    width: 20px;
+    height: 20px;
     background-color: #4fc3dc;
     margin: 0 4px;
     border-radius: 50%;
@@ -58,10 +59,11 @@ body {
     0 0 50px #4fc3dc,
     0 0 100px #4fc3dc;
     animation: animate 15s linear infinite;
-    animation-duration: calc(200s / var(--i));
+    animation-duration: calc(900s / var(--i));
 }
 
 .fondo .particles:nth-child(even) {
+    filter: blur(.8);
     background-color: #ff2d75;
     box-shadow: 0 0 0 10px #ff2d7544,
     0 0 50px #ff2d75,
