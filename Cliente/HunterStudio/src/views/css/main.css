@@ -59,7 +59,7 @@ body {
     0 0 50px #4fc3dc,
     0 0 100px #4fc3dc;
     animation: animate 15s linear infinite;
-    animation-duration: calc(900s / var(--i));
+    animation-duration: calc(200s / var(--i));
 }
 
 .fondo .particles:nth-child(even) {
@@ -78,5 +78,4 @@ body {
     100% {
         transform: translateY(-10vh) scale(1);
     }
-}
-*/
+}*/
