@@ -27,7 +27,7 @@ app.on('ready', () => {
         }
     });
     main_window.loadURL(url.format({
-        pathname: path.join(__dirname, '../views/login.html'),
+        pathname: path.join(__dirname, '../html/login.html'),
         protocol: 'file',
         slashes: true
     }))
