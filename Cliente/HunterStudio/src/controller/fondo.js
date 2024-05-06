@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
         container.style.setProperty("--duration", duration);
     };
 
-    generate_space_layer("1px", ".space-1", 200, "25s");
-    generate_space_layer("2px", ".space-2", 100, "20s");
-    generate_space_layer("4px", ".space-3", 25, "15s");
+    generate_space_layer("1px", ".space-1", 200, "35s");
+    generate_space_layer("2px", ".space-2", 100, "30s");
+    generate_space_layer("4px", ".space-3", 25, "25s");
 });

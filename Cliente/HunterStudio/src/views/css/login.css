@@ -27,7 +27,7 @@ section {
 }
 
 .registro .contenedor {
-    height: 550px;
+    height: 580px;
     width: 400px;
 }
 
@@ -102,21 +102,45 @@ input:valid ~ label {
 }
 
 .olvidar label a {
-    color: var(--platinum);
     text-decoration: none;
+    color: var(--platinum);
     transition: .3s;
-    font-size: .9em;
 }
 
 .olvidar label a:hover {
     text-decoration: underline;
 }
 
+.terminos {
+    font-size: .9rem;
+    color: var(--platinum);
+    display: flex;
+    justify-content: center;
+    margin: -10px 0 15px;
+}
+
+.terminos label a {
+    text-decoration: none;
+    color: var(--platinum);
+    transition: .3s;
+}
+
+.terminos label a:hover {
+    text-decoration: underline;
+}
+
+.terminos label input,
+.olvidar label input {
+    accent-color: var(--black);
+} 
+
+
 button {
     width: 100%;
     height: 45px;
     border-radius: 15px;
     background-color: var(--platinum);
+    color: var(--black);
     border: none;
     font-weight: bold;
     cursor: pointer;
@@ -132,6 +156,7 @@ button {
 
 button:hover {
     opacity: .9;
+    color: var(--platinum);
     background-color: var(--black);
 
     & a {
