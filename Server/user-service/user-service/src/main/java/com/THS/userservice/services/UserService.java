@@ -4,10 +4,24 @@
  */
 package com.THS.userservice.services;
 
+import com.THS.userservice.models.UserModel;
+import com.THS.userservice.repositories.IUserRepository;
+import java.util.ArrayList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 /**
  *
  * @author Alicia
  */
+
+@Service
 public class UserService {
     
+    @Autowired
+    IUserRepository userRepository;
+    
+    private ArrayList<UserModel> getUsers(){
+        return (ArrayList<UserModel>) userRepository.findAll();
+    } 
 }

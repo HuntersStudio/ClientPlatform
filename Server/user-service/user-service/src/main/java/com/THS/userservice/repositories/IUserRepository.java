@@ -4,6 +4,9 @@
  */
 package com.THS.userservice.repositories;
 
+import com.THS.userservice.models.UserModel;
+import java.util.ArrayList;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,6 +15,6 @@ import org.springframework.stereotype.Repository;
  */
 
 @Repository
-public interface IUserRepository  {
+public interface IUserRepository extends JpaRepository<UserModel, Long>{
     
 }
