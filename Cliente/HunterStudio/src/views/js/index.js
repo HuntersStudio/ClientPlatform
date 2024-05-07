@@ -3,13 +3,6 @@ const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
 
-// Mientras este activo el proceso se refresacaran todos los cambios
-/*if (process.env.NODE_ENV !== 'production') {
-    require('electron-reload')(__dirname, {
-        electron: path.join(__dirname, '../node_modules', '.bin', 'electron')
-    });
-}*/
-
 // Declaramos variables
 let main_window
 let new_product_window
@@ -19,6 +12,7 @@ app.on('ready', () => {
     main_window = new BrowserWindow({
         width: 1280, // Ancho predeterminado de la ventana
         height: 720, // Altura predeterminada de la ventana
+        //frame: false, // Quita el menu de arriba por defecto
         webPreferences: {
             contextIsolation: false,
             nodeIntegration: true,
@@ -26,13 +20,14 @@ app.on('ready', () => {
             enableRemoteModule: true
         }
     });
+
     main_window.loadURL(url.format({
         pathname: path.join(__dirname, '../html/login.html'),
         protocol: 'file',
         slashes: true
     }))
 
-    //main_window.setMenu(null);
+    //main_window.setMenu(null); // Ocultar herramientas de dev
 
     // Aqui se cierra todo el programa al cerrar la ventana principal
     main_window.on('closed', () => {

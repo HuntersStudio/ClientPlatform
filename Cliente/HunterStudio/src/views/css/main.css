@@ -13,11 +13,12 @@
 body {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     align-items: center;
     background: var(--black);
     color: var(--platinum);
     overflow: hidden;
+    border-radius: 0;
     z-index: 1;
     position: absolute;
 
@@ -27,9 +28,14 @@ body {
     font-style: normal;
 }
 
+body::before {
+    content: '';
+    border: 2px solid var(--platinum);
+}
+
 .contenedor {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     margin-top: 150px;
     position: absolute;
     z-index: 1;
