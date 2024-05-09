@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    user-select: none;
 }
 
 .cards {
@@ -54,13 +55,13 @@
 .image::before {
     top: 0;
     height: 100%;
-    background-image: linear-gradient(to top, transparent 46%, rgb(12,13,19,.5) 68%, rgb(12,13,19) 97%);
+    background-image: linear-gradient(to top, transparent 46%, rgb(12,13,19,.3) 68%, rgb(12,13,19) 97%);
 }
 
 .image::after {
     bottom: 0;
     opacity: 0;
-    background-image: linear-gradient(to top, transparent 46%, rgb(12,13,19,.5) 68%, rgb(12,13,19) 90%);
+    background-image: linear-gradient(to bottom, transparent 46%, rgb(12,13,19,.3) 68%, rgb(12,13,19) 97%);
 }
 
 .title {
@@ -81,7 +82,7 @@
 }
 
 .cards:hover .title {
-    transform: translate3d(0%, -50%, 100px);
+    transform: translate3d(0%, -50%, 300px);
 }
 
 .cards:hover .image::after,

@@ -101,9 +101,17 @@
     transform: scale(1.09);
 }
 
-.card_destacadas.expanded::before {
+.card_destacadas::before {
     content: '';
-    background-color: rgb(0, 0, 0, 50%);
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .5s;
+    position: absolute;
+}
+
+.card_destacadas.expanded::before {
+    background-color: rgb(0, 0, 0, 90%);
     opacity: .5;
 }
 
