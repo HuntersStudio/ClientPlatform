@@ -1,0 +1,134 @@
+@import url(../../colores.css);
+
+button {
+    font-size: large;
+    align-self: center;
+    background: linear-gradient(to left top, #64575d 50%, #888486 50%);
+    border-style: none;
+    color: var(--platinum);
+    letter-spacing: 1px;
+    cursor: pointer;
+    position: relative;
+    padding: 0px;
+    overflow: hidden;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+}
+
+#Bjugar {
+    font-size: x-large;
+    left: 50px;
+    width:170px;
+    height:60px;
+    background: linear-gradient(to left top, #64575d 50%, #888486 50%);
+    border-style: none;
+    color: var(--platinum);
+    font-size: 23px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    padding: 0px;
+    transition: all .5s;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+}
+
+#Bjugar span{
+    position: absolute;
+    display: block;
+}
+
+#Bjugar span:nth-child(1){
+    height: 3px;
+    width:200px;
+    top:0px;
+    left:-200px;
+    background: linear-gradient(to right, rgba(0,0,0,0), #f6e58d);
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span1 2s linear infinite;
+    animation-delay: 0s;
+}
+
+@keyframes span1{
+    0%{
+        left:-200px
+    }
+    100%{
+        left:200px;
+    }
+}
+#Bjugar span:nth-child(2){
+    height: 70px;
+    width: 3px;
+    top:-70px;
+    right:0px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #f6e58d);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 1px;
+    animation: span2 2s linear infinite;
+    animation-delay: 0.9s;
+}
+
+@keyframes span2{
+    0%{
+        top:-70px;
+    }
+    100%{
+        top:70px;
+    }
+}
+
+#Bjugar span:nth-child(3){
+    height:3px;
+    width:200px;
+    right:-200px;
+    bottom: 0px;
+    background: linear-gradient(to left, rgba(0,0,0,0), #f6e58d);
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+    animation: span3 2s linear infinite;
+    animation-delay: 0s;
+}
+
+@keyframes span3{
+    0%{
+        right:-200px;
+    }
+    100%{
+        right: 200px;
+    }
+}
+
+#Bjugar span:nth-child(4){
+    height:70px;
+    width:3px;
+    bottom:-70px;
+    left:0px;
+    background: linear-gradient(to top, rgba(0,0,0,0), #f6e58d);
+    border-top-right-radius: 1px;
+    border-top-left-radius: 1px;
+    animation: span4 2s linear infinite;
+    animation-delay: 0.9s;
+}
+
+@keyframes span4{
+    0%{
+        bottom: -70px;
+    }
+    100%{
+        bottom:70px;
+    }
+}
+
+#Bjugar:hover{
+    transition: all .5s;
+    box-shadow: 0px 3px 5px rgba(0,0,0,.4);
+    transform:  scale(1.03);
+    font-size: 25px;
+}
+
+
+#Binfo {
+    align-self: self-end;
+    margin-bottom: 5px;
+    margin-right: 5px;
+}

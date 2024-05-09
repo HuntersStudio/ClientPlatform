@@ -1,24 +1,26 @@
+@import url(../colores.css);
+
 .body {
+    margin-top: 0.5%;
     display: flex;
     justify-content: space-between;
     width: 100%;
     height: 100vh;
-    border-top: 2px solid black;
+    border-top: 1px solid var(--platinum);
 }
 
-#menu-leteral{
-    flex: 0; /* El div ocupará todo el espacio restante */
-    width: 100%;
-    background: black;
+.menu-leteral {
+    width: 18%;
+    background: var(--black);
     z-index: 0;
-    border-right:5px solid white;
 }
 
-#contex {
-    flex: 1; /* El div ocupará todo el espacio restante */
-    margin-top: 5%; /* Margen del 10% respecto al borde superior del contenedor */
+.contex {
+    width: 80%;
     text-align: center; /* Centrar el texto horizontalmente */
     display: flex;
-    width: 100%;
     justify-content: center; /* Centrar horizontalmente */
+    height: 100vh;
+    /* Poner imagen de fondo a futuro aqui en contex background-image: ; */
+    z-index: 0;
 }

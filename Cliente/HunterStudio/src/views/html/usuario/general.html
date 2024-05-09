@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/secundary/usuario/general.css" />
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="general">
+        <div class="usuario">
+            <img src="../img/usuario/usuario.jpg" alt="">
+        
+            <div class="info">
+                <span class="username">Username</span>
+                <button class="categoria">Categoria 4</button>
+
+                <p class="registro">    
+                    Registrado en
+                    <span class="fecha">01/01/2024</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="datos">
+            <div class="mail">
+                <p>
+                    Correo:<span class="user_mail">mail@mail.com</span>
+                    <button class="change_mail">Cambiar Correo</button>
+                </p>
+            </div>
+
+            <div class="password">
+                <p>
+                    Contraseña: 
+                    <i class="fi fi-rr-eye-crossed mostrar_contraseña" data-password-field="user_password" onclick="mostrar(this, 'user_password')"></i>
+                    <input type="password" class="user_password" value="123456789" readonly>
+                    <button class="change_password">Cambiar Contraseña</button>
+                </p>
+            </div>
+        </div>
+
+        <div class="actividad">
+            <p> Actividad reciente: </p>
+            
+            <div class="progresos">
+                <div class="TWH">
+                    <img src="../img/juegos/TWH/icono.jpg" alt="">
+                    <div class="info">
+                        <span class="titulo">The Wandering Hunter</span>
+                        <span class="horas">20h registradas</span>
+                        
+                        <p class="logros">
+                            <p>
+                                Logros:
+                                <span class="porcentaje">50%</span>
+                            </p>
+                            <div class="progress_bar" style="--wth:50%"></div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/mostrar_contraseña.js"></script>
+</body>
+</html>

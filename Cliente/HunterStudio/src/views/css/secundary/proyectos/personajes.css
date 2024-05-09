@@ -1,0 +1,104 @@
+@import url(../../colores.css);
+
+:root {
+    --card-heigth: 300px; 
+    --card-width: calc(var(--card-heigth) / 1.5);
+}
+
+.personajes {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.cards {
+    width: var(--card-width);
+    height: var(--card-heigth);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin: 0 50px;
+    cursor: pointer;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image {
+    transition: all .5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.image::before,
+.image::after {
+    content: '';
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all .5s;
+    position: absolute;
+    left: 0;
+}
+
+.image::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(to top, transparent 46%, rgb(12,13,19,.3) 68%, rgb(12,13,19) 97%);
+}
+
+.image::after {
+    bottom: 0;
+    opacity: 0;
+    background-image: linear-gradient(to bottom, transparent 46%, rgb(12,13,19,.3) 68%, rgb(12,13,19) 97%);
+}
+
+.title {
+    width: 100%;
+    transition: transform .5s;
+}
+
+.character {
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: all .5s;
+}
+
+.cards:hover .image {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+}
+
+.cards:hover .title {
+    transform: translate3d(0%, -50%, 300px);
+}
+
+.cards:hover .image::after,
+.image::before {
+    opacity: 1;
+}
+
+.cards:hover .image::after {
+    height: 120px;
+}
+
+.cards:hover .image::before {
+    opacity: 1;
+}
+
+.cards:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+}

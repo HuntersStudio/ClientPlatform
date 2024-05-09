@@ -1,70 +1,88 @@
-#lista {
-    z-index: 0; 
-    position: absolute;
-    position: flex;
-    width: 25vh;
-    height: 100vh;
-    flex: 0 0 auto;
-    order: 0;
-    background-color: black;
+@import url(../colores.css);
 
-    &:after {
-      content: ''; /* Contenido vacio para que se vea el elemento*/
-      position: absolute; /* Posicion */
-      width: 12%; /* Largo del borde */
-      height: 100%; /* Grosor del borde */
-      background: #181818; /* Color del borde */
-      top: calc(0%); /* Posición vertical centrada */
-      right: -11.7%; /* Posición a la derecha */
+#lista-lateral {
+  user-select: none;
+  z-index: 0; 
+  position: absolute;
+  position: flex;
+  width: 18%;
+  height: 100%;
+  flex: 0 0 auto;
+  order: 0;
+  background-color: var(--black);
+
+  /* background-color: rgb(85, 85, 85); */
+
+  &:after {
+    content: ''; /* Contenido vacio para que se vea el elemento*/
+    position: absolute; /* Posicion */
+    width: 12.4%;
+    height: 100%;
+    background: var(--black);
+    border-left: 1px solid var(--platinum);
+    border-right: 1px solid var(--platinum);
+    top: calc(0%); /* Posición vertical centrada */
+    right: -11.9%; /* Posición a la derecha */
+  }
+
+  & li:first-child {
+    padding-top: 20%;
+  }
+
+  & li:last-child a {
+      border-bottom: 1px solid var(--platinum);
+    
+    &::after{
+      border-right: 1px solid var(--platinum);
     }
+  }
+  /* COMO ACCEDER AL ALEMENTO LI - A - CLASS ITEM PARA MODIFICAR EL ULTIMO ELEMENTO*/
 }
 
 .list-item {
-    z-index: 1;
-    margin-top: 20%;
-    background: #000;
-    color: #575757;
-    text-align: center;
-    height: auto;
-    width: 100%;
-    line-height: 3.5em; /* Tamaño vertical de los botones */
-    border-bottom: 1px solid #060606;
-    position: relative;
-    display: block;
-    text-decoration: none;
-    transition: all .25s linear;
-    
-    &:hover {
-      background-color: #ff6e42;
-      
-      &:after {
-        background-color: #b65234;
-      }
-    }
+  z-index: 1;
+  font-size: 15px;
+  background: var(--black);
+  text-align: center;
+  color: white; 
+  max-height: 5em;
+  line-height: 5em; /* Tamaño vertical de los botones */
+  border-top: 1px solid var(--platinum);
+  border-right: 1px solid var(--platinum);
+  position: relative;
+  display: block;
+  text-decoration: none;
+  transition: all .25s linear;
   
-    /* Borde de abajo sin el raton encima */
+  &:hover {
+    background-color: var(--jade);
+    color: var(--platinum);
+    
     &:after {
-      content: ''; /* Contenido vacio para que se vea el elemento*/
-      position: absolute; /* Posicion */
-      transition: all .25s linear; /* Pequeño delay como efecto especial*/
-      width: 25%; /* Largo del borde */
-      height: 50%; /* Grosor del borde */
-      background: #181818; /* Color del borde */
-      top: calc(10%); /* Posición vertical centrada */
-      right: -18%; /* Posición a la derecha */
-      transform: rotate(45deg) skew(0, 45deg); /* Inclinacion de los bordes */
+      background-color: var(--castetlon);
     }
-    
-    &:before {
-      height: 2.5em;
-      background-color: #121212;
-      top: .25em;
-      left: -.5em;
-      transform: skewY(-45deg);
-    }
-    
-    /*
-    &:last-child{
-      height: 100vh;
-    }*/
+  }
+
+  /* Borde de abajo sin el raton encima */
+  &:after {
+    border-bottom: 1px solid var(--platinum);
+    border-left: 1px solid var(--platinum); /* borde de abajo*/
+    content: ''; /* Contenido vacio para que se vea el elemento*/
+    position: absolute; /* Posicion */
+    transition: all .25s linear; /* Pequeño delay como efecto especial*/
+    width: 24%;
+    height: 55%; /* Grosor del borde */
+    background: var(--black); /* Color del borde */
+    top: calc(4.1%); /* Posición vertical centrada */
+    right: -18%; /* Posición a la derecha */
+    transform: rotate(45deg) skew(0, 45deg); /* Inclinacion de los bordes */
+  }
+}
+
+#nav_bar_clicked {
+  background-color: var(--jade);
+  
+  &::after {
+      background-color: var(--castetlon);
+  }
 }

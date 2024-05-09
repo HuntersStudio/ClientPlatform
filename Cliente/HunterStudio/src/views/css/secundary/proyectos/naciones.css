@@ -1,0 +1,18 @@
+@import url(../../colores.css);
+
+
+.card[for="c1"] {
+    background-image: url(../../../../img/elementos/agua.jpg);
+}
+
+.card[for="c2"] {
+    background-image: url(../../../../img/elementos/fuego.jpg);
+}
+
+.card[for="c3"] {
+    background-image: url(../../../../img/elementos/vida.jpg);
+}
+
+.card[for="c4"] {
+    background-image: url(../../../../img/elementos/roca.jpg);
+}

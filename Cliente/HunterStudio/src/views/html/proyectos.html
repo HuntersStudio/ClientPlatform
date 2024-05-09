@@ -4,26 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>Document</title> 
+    
     <link rel="stylesheet" href="css/secundary/navigation_bar.css" />
     <link rel="stylesheet" href="css/secundary/contenedor.css" />
 </head>
 
 <body>
+
     <div class="body">
-        <aside id="menu-leteral">
-            <ul id="lista">
-                <li><a class="list-item" href="#">Elemento 1</a></li>
-                <li><a class="list-item" href="#">Elemento 2</a></li>
-                <li><a class="list-item" href="#">Elemento 3</a></li>
-                <li><a class="list-item" href="#">Elemento 4</a></li>
+        <aside class="menu-leteral">
+            <ul id="lista-lateral">
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/TWH.html', 'contex'); configurarLista(this);">The Wandering Hunter</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/categorias.html', 'contex'); configurarLista(this);">Categorias</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/naciones.html', 'contex'); configurarLista(this);">Naciones</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/personajes.html', 'contex'); configurarLista(this);">Personajes</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/armas.html', 'contex'); configurarLista(this);">Armas</a></li>
+                <li><a class="list-item" href="#" onclick="configurarLista(this);">Otros proyectos...</a></li>
             </ul>
         </aside>
 
-        <div id="contex">
-            PRUEBA
-        </div>
-
+        <div class="contex"></div>
+          
     </div>
-    
-</html>
+
+</body>
+</html> 

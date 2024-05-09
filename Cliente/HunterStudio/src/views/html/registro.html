@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap">
+    
+    <!-- ICONOS -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'> <!-- CORREO -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'> <!-- Ojo -->
+
+    <link rel="stylesheet" href="../css/login.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- PONER UN ENLACE AL MAIN PARA QUE LA APLICACION ENTERA CARGUE SIN PROBLEMA -->
+
+    <section class="registro">
+        <div class="contenedor">
+            <div class="formulario">
+                <form action="#">
+                    <h2>Registrar Cuenta</h2>
+
+                    <div class="input-contenedor">
+                        <input type="text" required>
+                        <label for="#">Nombre</label>
+                    </div>
+
+                    <div class="input-contenedor">
+                        <i class="fi fi-rr-envelope"></i>
+                        <input type="email" required>
+                        <label for="#">Email</label>
+                    </div>
+
+                    <div class="input-contenedor">
+                        <i class="fi fi-rr-eye-crossed mostrar_contraseña" data-password-field="user_password" onclick="mostrar(this, 'password-field')"></i>
+                        <input type="password" class="password-field" required>
+                        <label for="#">Contraseña</label>
+                    </div>
+
+                    <div class="input-contenedor">
+                        <i class="fi fi-rr-eye-crossed mostrar_contraseña" data-password-field="user_password" onclick="mostrar(this, 'password-field')"></i>
+                        <input type="password" class="password-field" required>
+                        <label for="#">Repetir Contraseña</label>
+                    </div>
+
+                    <div class="terminos">
+                        <label for="#">
+                            <input type="checkbox"> Acepto los 
+                            <a href="#">terminos y condiciones</a>
+                        </label>
+                    </div>
+                </form>
+
+                <div>
+                    <a href="../index.html"><button>Registrar</button></a>
+
+                    <div class="registrar">
+                        <p>Ya tengo cuenta <a href="./login.html">Iniciar sesion</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/login.js"></script>
+    <script src="./js/mostrar_contraseña.js"></script>
+
+</body>
+</html>
