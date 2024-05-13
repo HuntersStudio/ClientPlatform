@@ -1,6 +1,6 @@
 @import url(../../colores.css);
 
-button {
+.jugar button {
     font-size: large;
     align-self: center;
     background: linear-gradient(to left top, #64575d 50%, #888486 50%);
