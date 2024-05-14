@@ -11,6 +11,11 @@ document.getElementById('minimized-btn').addEventListener('click', () => {
     ipcRenderer.send('minimizar-ventana');
 });
 
+document.getElementById('maximized-btn').addEventListener('click', () => {
+    // Enviar un mensaje al proceso principal para maximizar la ventana
+    ipcRenderer.send('maximizar-ventana');
+});
+
 document.getElementById('ShowHidenMenus').addEventListener('click', () => {
     const lists = document.getElementsByClassName('left-menu');
     for (let i = 0; i < lists.length; i++) {

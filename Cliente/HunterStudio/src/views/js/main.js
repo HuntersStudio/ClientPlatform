@@ -71,3 +71,12 @@ ipcMain.on('minimizar-ventana', () => {
         main_window.minimize();
     }
 });
+
+// Manejar el evento de minimizar ventana desde el proceso de renderizado
+ipcMain.on('maximizar-ventana', () => {
+    if (main_window.isMaximized()) {
+        main_window.restore();
+    } else {
+        main_window.maximize();
+    }
+});

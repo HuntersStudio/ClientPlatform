@@ -1,6 +1,17 @@
 @import url(../../colores.css);
 
 
+.naciones {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    margin-bottom: 100px;
+    overflow-x: hidden;
+}
+
 .card[for="c1"] {
     background-image: url(../../../../img/elementos/agua.jpg);
 }
