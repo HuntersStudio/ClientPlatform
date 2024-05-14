@@ -36,13 +36,31 @@ app.on('ready', () => {
 
 // Crear ventana flotante secundaria
 function crearVentana() {
-    const ventana = new BrowserWindow({frame: false, width: 800, height: 600 });
+    const ventana = new BrowserWindow({
+        frame: false, 
+        modal: true,
+        parent: main_window,
+        width: 800, 
+        height: 600,
+        webPreferences: {
+            nodeIntegration: true,
+        }
+    });
     ventana.loadFile('index.html');
 }
 
 // Escuchar solicitud para abrir una nueva ventana
 ipcMain.on('abrir-ventana', (event, enlace_ventana) => {
-    const ventana = new BrowserWindow({frame: false, width: 800, height: 600 });
+    const ventana = new BrowserWindow({
+        frame: false,
+        modal: true,
+        parent: main_window, 
+        width: 800, 
+        height: 600,
+        webPreferences: {
+            nodeIntegration: true,
+        } 
+    });
     ventana.loadFile(enlace_ventana);
 });
 

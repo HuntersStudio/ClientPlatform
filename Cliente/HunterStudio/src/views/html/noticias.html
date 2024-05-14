@@ -14,7 +14,7 @@
     <div class="body">
         <aside class="menu-leteral">
             <ul id="lista-lateral">
-                <li><a class="list-item" href="#" onclick="cargarContenido('./html/noticias/publicaciones.html', 'contex'); configurarLista(this);">Publicaciones</a></li>
+                <li><a id="nav_bar_clicked" class="list-item" href="#" onclick="cargarContenido('./html/noticias/publicaciones.html', 'contex'); configurarLista(this);">Publicaciones</a></li>
                 <li><a class="list-item" href="#" onclick="configurarLista(this);">The Wandering Hunter</a></li>
                 <li><a class="list-item" href="#" onclick="configurarLista(this);">Futuros proyectos...</a></li>
             </ul>
@@ -23,5 +23,9 @@
         <div class="contex"></div>
         
     </div>
+
+    <script>
+        cargarContenido('./html/noticias/publicaciones.html', 'contex'); configurarLista(this);
+    </script>
 </body>
 </html>

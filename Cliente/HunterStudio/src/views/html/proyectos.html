@@ -16,7 +16,7 @@
     <div class="body">
         <aside class="menu-leteral">
             <ul id="lista-lateral">
-                <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/TWH.html', 'contex'); configurarLista(this);">The Wandering Hunter</a></li>
+                <li><a id="nav_bar_clicked" class="list-item" href="#" onclick="cargarContenido('./html/proyectos/TWH.html', 'contex'); configurarLista(this);">The Wandering Hunter</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/categorias.html', 'contex'); configurarLista(this);">Categorias</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/naciones.html', 'contex'); configurarLista(this);">Naciones</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/proyectos/personajes.html', 'contex'); configurarLista(this);">Personajes</a></li>
@@ -28,6 +28,10 @@
         <div class="contex"></div>
           
     </div>
+
+    <script>
+        cargarContenido('./html/proyectos/TWH.html', 'contex'); configurarLista(this);
+    </script>
 
 </body>
 </html> 

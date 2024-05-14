@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
 }
 
 /* Cambiar el color de la barra de desplazamiento */
@@ -22,8 +23,11 @@
 .mainApp {
     width: 100%;
     height: 100vh;
+    align-items: center;
     overflow-x: none;
     background-color: var(--black);
+    background-image: url(../../../../img/juegos/TWH/icono.jpg);
+    background-size: 100% 100%;
 }
 
 #close-btn {
@@ -42,8 +46,11 @@
 }
 
 .personaje .card {
+    padding-top: 30px;
     display: flex;
-    columns: row;
+    flex-direction: column; /* Cambiar a disposición de columna */
+    align-items: center; /* Centrar horizontalmente */
+    text-align: center; /* Centrar el texto */
 }
 
 .personaje .card .foto {
@@ -52,12 +59,12 @@
 }
 
 .personaje .card .nombre {
+    padding-top: 15px;
     height: 80px;
     width: auto;
 }
 
 .personaje .lore {
     color: var(--platinum);
-    margin-top: 40px;
     margin: 40px;
 }

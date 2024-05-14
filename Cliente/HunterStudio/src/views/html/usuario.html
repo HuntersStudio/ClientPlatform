@@ -16,7 +16,7 @@
     <div class="body">
         <aside class="menu-leteral">
             <ul id="lista-lateral">
-                <li><a class="list-item" href="#" onclick="cargarContenido('./html/usuario/general.html', 'contex'); configurarLista(this);">General</a></li>
+                <li><a id="nav_bar_clicked" class="list-item" href="#" onclick="cargarContenido('./html/usuario/general.html', 'contex'); configurarLista(this);">General</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/usuario/general.html', 'contex'); configurarLista(this);">Publicaciones</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/usuario/general.html', 'contex'); configurarLista(this);">Inventario</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/usuario/logros.html', 'contex'); configurarLista(this);">Logros</a></li>
@@ -28,6 +28,8 @@
     </div>
 
     <script>
+        cargarContenido('./html/usuario/general.html', 'contex'); configurarLista(this);
+
         document.addEventListener('DOMContentLoaded', function () {
             // Llama a cargarContenido al cargar la página
             cargarContenido('./html/proyectos/TWH.html', 'contex');
