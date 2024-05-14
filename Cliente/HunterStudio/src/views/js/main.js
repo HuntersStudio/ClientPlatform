@@ -42,14 +42,14 @@ function crearVentana() {
 
 // Escuchar solicitud para abrir una nueva ventana
 ipcMain.on('abrir-ventana', (event, enlace_ventana) => {
-    const ventana = new BrowserWindow({width: 800, height: 600 });
+    const ventana = new BrowserWindow({frame: false, width: 800, height: 600 });
     ventana.loadFile(enlace_ventana);
 });
 
+// Manejar el evento de minimizar ventana desde el proceso de renderizado
 ipcMain.on('minimizar-ventana', () => {
-    // Obtener la ventana actual y minimizarla
-    const ventanaActual = BrowserWindow.getFocusedWindow();
-    if (ventanaActual) {
-        ventanaActual.minimize();
+    // Minimizar la ventana actual
+    if (main_window) {
+        main_window.minimize();
     }
 });

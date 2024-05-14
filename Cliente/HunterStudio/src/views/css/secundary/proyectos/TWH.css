@@ -2,13 +2,13 @@
 
 .jugar {
     width: 100%;
-    height: 11.5%;
+    height: 77px;
     display: flex;
     justify-content: space-between;
     background-color: var(--jade);
     border: 1px solid var(--platinum) ;
-    border-left: 0px;
-    margin-top: 2.4%;
+    margin-left: 5px;
+    margin-top: 20px;
     z-index: 1;
 }
 
@@ -16,6 +16,11 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+}
+
+.info-lore {
+    text-align: start;
+    margin: 40px;
 }
 
 .comunidad {

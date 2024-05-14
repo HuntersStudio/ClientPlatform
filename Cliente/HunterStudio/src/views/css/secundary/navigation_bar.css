@@ -16,17 +16,17 @@
   &:after {
     content: ''; /* Contenido vacio para que se vea el elemento*/
     position: absolute; /* Posicion */
-    width: 12.4%;
+    width: 30px;
     height: 100%;
     background: var(--black);
     border-left: 1px solid var(--platinum);
     border-right: 1px solid var(--platinum);
     top: calc(0%); /* Posición vertical centrada */
-    right: -11.9%; /* Posición a la derecha */
+    right: -32px; /* Posición a la derecha */
   }
 
   & li:first-child {
-    padding-top: 20%;
+    padding-top: 50px;
   }
 
   & li:last-child a {
@@ -65,16 +65,14 @@
 
   /* Borde de abajo sin el raton encima */
   &:after {
-    border-bottom: 1px solid var(--platinum);
     border-left: 1px solid var(--platinum); /* borde de abajo*/
     content: ''; /* Contenido vacio para que se vea el elemento*/
     position: absolute; /* Posicion */
     transition: all .25s linear; /* Pequeño delay como efecto especial*/
-    width: 24%;
-    height: 55%; /* Grosor del borde */
+    width: 52px;
+    height: 42px; /* Grosor del borde */
     background: var(--black); /* Color del borde */
-    top: calc(4.1%); /* Posición vertical centrada */
-    right: -18%; /* Posición a la derecha */
+    right: -44px; /* Posición a la derecha */
     transform: rotate(45deg) skew(0, 45deg); /* Inclinacion de los bordes */
   }
 }
