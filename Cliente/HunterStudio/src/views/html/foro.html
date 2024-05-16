@@ -11,7 +11,7 @@
     <div class="body">
         <aside class="menu-leteral">
             <ul id="lista-lateral">
-                <li><a class="list-item" href="#" onclick="cargarContenido('./html/foro/fogges.html', 'contex'); configurarLista(this);">Fogges</a></li>
+                <li><a id="nav_bar_clicked" class="list-item" href="#" onclick="cargarContenido('./html/foro/global.html', 'contex'); configurarLista(this);">Global</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/foro/instagram.html', 'contex'); configurarLista(this);">Instagram</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/foro/x.html', 'contex'); configurarLista(this);">X</a></li>
                 <li><a class="list-item" href="#" onclick="cargarContenido('./html/foro/facebook.html', 'contex'); configurarLista(this);">Facebook</a></li>
@@ -20,5 +20,10 @@
 
         <div class="contex"></div>  
     </div>
+
+    <script>
+        cargarContenido('./html/foro/global.html', 'contex'); configurarLista(this);
+    </script>
+
 </body>
 </html>

@@ -20,7 +20,7 @@
     text-align: center; /* Centrar el texto horizontalmente */
     display: flex;
     justify-content: center; /* Centrar horizontalmente */
-    height: 100vh;
+    height: 100%;
     /* Poner imagen de fondo a futuro aqui en contex background-image: ; */
     z-index: 0;
 }

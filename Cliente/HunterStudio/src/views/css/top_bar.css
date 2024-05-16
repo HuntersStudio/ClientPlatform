@@ -59,7 +59,7 @@
     width: 100%;
     line-height: 30px;
     padding-bottom: 5px;
-    -webkit-app-region: drag;   
+    -webkit-app-region: drag;
 }
 
 .top-bar > .title-bar-button {
