@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- npm install electron axios socket.io-client   CLIENTE -->
+
     <!-- https://www.youtube.com/watch?v=GEXhlGH7ylE INSTALADOR -->
     <!-- https://www.youtube.com/watch?v=6OcAoXr40oE CONFIGURAR LA BARRA DE ARRIBA -->
     <!-- https://www.youtube.com/watch?v=2Nmi1sXu12U CONFIGURAR MODO OSCURO Y CLARO -->
@@ -42,7 +44,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap">
 
     <!-- ICONOS -->
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'> <!-- Corazon -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'> <!-- Corazon, X -->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'> <!-- Persona -->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css'> <!-- Casa -->
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-straight/css/uicons-thin-straight.css'> <!-- Flechas -->
@@ -52,13 +54,45 @@
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" href="css/fondo.css" />
+    <link rel="stylesheet" href="css/top_bar.css" />
 </head>
 
 <body>
 
-    <div class="top-bar">
-        <button>a</button>
 
+    <div class="mainApp">
+        <div class="top-bar">
+            <div class="title-bar">
+                <button id="ShowHidenMenus" class="toggleButton">
+                    <ul>
+                        <li>
+                            <i class="fi fi-sr-align-justify"></i>            
+                            <ul class="left-menu">
+                                <li id="reload-btn"><a href="#">Reload</a></li>
+                                <li><a href="#" onclick="generar_ventana('../html/ventanas/ajustes.html');"> Settings</a></li>
+                                <li><a id="dev-tools-btn" href="#">Dev Tools</a></li>
+                                <li><a href="#">Exit</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </button>   
+
+                <div class="title">
+                    The Hunter Studio
+                </div>
+            </div>
+            <div class="title-bar-button">
+                <button id="minimized-btn" class="top-btn minimized-btn">
+                    <i class="fi fi-br-window-minimize"></i>
+                </button>
+                <button id="maximized-btn" class="top-btn maximized-btn">
+                    <i class="fi fi-rs-window-maximize"></i>
+                </button>
+                <button id="close-btn" class="top-btn close-btn">
+                    <i class="fi fi-rr-cross"></i>
+                </button>
+            </div>
+        </div>
         <div class="menu">
             <ul id="lista-menu">
                 <li><a href="">Inicio</a></li>
@@ -72,19 +106,22 @@
                 </li>
             </ul>
         </div>
-    </div>
-    
-    <div class="fondo">
-        <div class="space space-1"></div>
-        <div class="space space-2"></div>
-        <div class="space space-3"></div>
-    </div>
+        <div class="content-area">
+            <div class="fondo">
+                <div class="space space-1"></div>
+                <div class="space space-2"></div>
+                <div class="space space-3"></div>
+            </div>
+        
+            <div class="contenedor">
+            </div>
+        </div>
+    </div>   
 
-    <div class="contenedor">
-    </div>
-    
     <!-- script para cargar el html en el contenedor indicado al clicar en las listas -->
     <script src="./js/cargar_html.js"></script>
     <script src="./js/fondo.js"></script>
+    <script src="./js/top_bar.js"></script>
+    <script src="./js/ventana.js"></script>
 </body>
 </html>

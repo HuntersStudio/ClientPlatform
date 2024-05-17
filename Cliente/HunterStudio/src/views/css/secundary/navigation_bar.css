@@ -11,22 +11,20 @@
   order: 0;
   background-color: var(--black);
 
-  /* background-color: rgb(85, 85, 85); */
-
   &:after {
-    content: ''; /* Contenido vacio para que se vea el elemento*/
-    position: absolute; /* Posicion */
-    width: 12.4%;
+    content: '';
+    position: absolute;
+    width: 30px;
     height: 100%;
     background: var(--black);
     border-left: 1px solid var(--platinum);
     border-right: 1px solid var(--platinum);
     top: calc(0%); /* Posición vertical centrada */
-    right: -11.9%; /* Posición a la derecha */
+    right: -32px; /* Posición a la derecha */
   }
 
   & li:first-child {
-    padding-top: 20%;
+    padding-top: 50px;
   }
 
   & li:last-child a {
@@ -36,23 +34,26 @@
       border-right: 1px solid var(--platinum);
     }
   }
-  /* COMO ACCEDER AL ALEMENTO LI - A - CLASS ITEM PARA MODIFICAR EL ULTIMO ELEMENTO*/
 }
 
-.list-item {
-  z-index: 1;
-  font-size: 15px;
+.list-item { 
   background: var(--black);
   text-align: center;
-  color: white; 
-  max-height: 5em;
+  color: var(--platinum);
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  height: 76px;
+  max-height: 100px;
   line-height: 5em; /* Tamaño vertical de los botones */
   border-top: 1px solid var(--platinum);
   border-right: 1px solid var(--platinum);
   position: relative;
-  display: block;
+  display: flex;
+  justify-content: center;
   text-decoration: none;
   transition: all .25s linear;
+  z-index: 1;
   
   &:hover {
     background-color: var(--jade);
@@ -63,18 +64,16 @@
     }
   }
 
-  /* Borde de abajo sin el raton encima */
   &:after {
-    border-bottom: 1px solid var(--platinum);
-    border-left: 1px solid var(--platinum); /* borde de abajo*/
-    content: ''; /* Contenido vacio para que se vea el elemento*/
-    position: absolute; /* Posicion */
+    border-left: 1px solid var(--platinum);
+    content: '';
+    position: absolute;
     transition: all .25s linear; /* Pequeño delay como efecto especial*/
-    width: 24%;
-    height: 55%; /* Grosor del borde */
-    background: var(--black); /* Color del borde */
-    top: calc(4.1%); /* Posición vertical centrada */
-    right: -18%; /* Posición a la derecha */
+    width: 53px; /* Largo del after */
+    height: 42px; /* Ancho del after */
+    background: var(--black);
+    right: -44px;
+    top: 0px;
     transform: rotate(45deg) skew(0, 45deg); /* Inclinacion de los bordes */
   }
 }

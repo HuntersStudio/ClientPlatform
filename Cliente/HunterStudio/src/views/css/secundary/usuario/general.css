@@ -11,7 +11,7 @@
     display: flex;
 }
 
-button {
+.general button {
     position: absolute;
     right: 50px;
     text-align: right;
@@ -147,7 +147,7 @@ button:hover {
 
 .TWH .info .horas {
     position: absolute;
-    right: 120px;
+    right: 10%;
     text-align: right;
     text-align: center;
 }

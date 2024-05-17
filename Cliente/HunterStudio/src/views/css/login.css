@@ -135,7 +135,8 @@ input:valid ~ label {
 } 
 
 
-button {
+.login button,
+.registro button {
     width: 100%;
     height: 45px;
     border-radius: 15px;

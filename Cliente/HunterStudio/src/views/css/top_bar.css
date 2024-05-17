@@ -1,0 +1,142 @@
+@import url(./colores.css);
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-straight/css/uicons-regular-straight.css');
+
+.mainApp {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.mainApp > .top-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40px;
+    background-color: var(--black);
+    user-select: none;
+}
+
+.top-bar > .title-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.title-bar > .toggleButton {
+    width: 45px;
+    height: 45px;
+    border: none;
+    outline: none;
+    color: var(--platinum);
+    font-size: 30px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.title-bar > .toggleButton:hover {
+    background-color: #272C36;
+}
+
+.title-bar > .toggleButton:active {
+    background-color: var(--jade);
+}
+
+.title-bar > .title {
+    color: var(--platinum);
+    margin-left: 10px;
+    width: 100%;
+    line-height: 30px;
+    padding-bottom: 5px;
+    -webkit-app-region: drag;
+}
+
+.top-bar > .title-bar-button {
+    display: flex;
+    flex-direction: row;
+    width: 110px;
+    height: 40px;
+}
+
+.title-bar-button > .top-btn {
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    outline: none;
+    color: var(--platinum);
+    background-color: var(--black);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.title-bar-button > .top-btn:hover {
+    background-color: #272C36;
+}
+
+.title-bar-button > .top-btn:active {
+    background-color: var(--jade);
+}
+
+.title-bar-button > .maximized-btn {
+    height: 100%;
+}
+
+.title-bar-button > .minimized-btn {
+    height: 100%;
+}
+
+.title-bar-button > .close-btn {
+    height: 100%;
+}
+
+.mainApp > .content-area {
+    height: 100vh;
+    width: 100%;
+}
+
+.left-menu {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 150px;
+    background-color: var(--black);
+    z-index: 2;
+}
+
+.left-menu li {
+    text-align: center;
+    border-bottom: 1px solid var(--platinum);
+}
+
+.left-menu li:hover {
+    background-color: var(--castetlon);
+}
+
+.left-menu li:hover a {
+    filter: brightness(2);
+}
+
+.left-menu li a {
+    color: var(--platinum);
+    text-decoration: none; 
+    font-size: 20px;
+}
+
+.left-menu li:active {
+    background-color: var(--jade);
+}

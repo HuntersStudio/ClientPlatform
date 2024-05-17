@@ -9,7 +9,7 @@
     align-items: center;
     transform-style: preserve-3d;
     flex-direction: column;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
     overflow-x: hidden;
 }
 
@@ -34,7 +34,7 @@
 
 .lista-publicaciones {
     position: absolute;
-    margin-top: 110%;
+    margin-top: 1100px;
     height: 100%;
     width: 100%;
     align-items: center;
