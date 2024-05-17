@@ -55,6 +55,7 @@
 }
 
 .title-bar > .title {
+    color: var(--platinum);
     margin-left: 10px;
     width: 100%;
     line-height: 30px;
