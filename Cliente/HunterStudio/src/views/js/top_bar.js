@@ -31,3 +31,7 @@ document.getElementById('reload-btn').addEventListener('click', () => {
     // Recargar la ventana actual
     location.reload();
 });
+
+document.getElementById('dev-tools-btn').addEventListener('click', () => {
+    ipcRenderer.send('show-dev-tools');
+});

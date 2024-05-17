@@ -16,7 +16,7 @@
     width: 80%;
     height: 100px;
     bottom: 110px;
-    padding: 25px;
+    padding: 40px;
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -27,13 +27,13 @@
 
 .texto {
     resize: none;
-    height: 70px;
+    height: 60px;
     position: relative;
     border: 1px solid var(--platinum);
     color: var(--platinum);
     font-size: 25px;
-    padding-top: calc((70px - 1em) / 2);
-    padding-bottom: calc((70px - 1em) / 2);
+    padding-top: calc((55px - 1em) / 2);
+    padding-bottom: calc((55px - 1em) / 2);
     border-radius: 50px;
     margin-right: 10px;
     padding-left: 20px;
@@ -46,4 +46,12 @@
     height: 60px;
     border: 1px solid var(--platinum);
     border-radius: 50%;
+}
+
+.enviar:hover {
+    background-color: var(--black);
+}
+
+.enviar:active {
+    background-color: var(--jade);
 }

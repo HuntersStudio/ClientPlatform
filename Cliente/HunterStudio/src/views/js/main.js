@@ -80,3 +80,13 @@ ipcMain.on('maximizar-ventana', () => {
         main_window.maximize();
     }
 });
+
+ipcMain.on('show-dev-tools', () => {
+    if (main_window) {
+        if (main_window.webContents.isDevToolsOpened()) {
+            main_window.webContents.closeDevTools();
+        } else {
+            main_window.webContents.openDevTools();
+        }
+    }
+});

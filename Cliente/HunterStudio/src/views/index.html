@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- npm install electron axios socket.io-client   CLIENTE -->
+
     <!-- https://www.youtube.com/watch?v=GEXhlGH7ylE INSTALADOR -->
     <!-- https://www.youtube.com/watch?v=6OcAoXr40oE CONFIGURAR LA BARRA DE ARRIBA -->
     <!-- https://www.youtube.com/watch?v=2Nmi1sXu12U CONFIGURAR MODO OSCURO Y CLARO -->
@@ -67,7 +69,8 @@
                             <i class="fi fi-sr-align-justify"></i>            
                             <ul class="left-menu">
                                 <li id="reload-btn"><a href="#">Reload</a></li>
-                                <li><a href="#">Settings</a></li>
+                                <li><a href="#" onclick="generar_ventana('../html/ventanas/ajustes.html');"> Settings</a></li>
+                                <li><a id="dev-tools-btn" href="#">Dev Tools</a></li>
                                 <li><a href="#">Exit</a></li>
                             </ul>
                         </li>
@@ -119,5 +122,6 @@
     <script src="./js/cargar_html.js"></script>
     <script src="./js/fondo.js"></script>
     <script src="./js/top_bar.js"></script>
+    <script src="./js/ventana.js"></script>
 </body>
 </html>

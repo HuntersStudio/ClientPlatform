@@ -13,17 +13,17 @@
 }
 
 .card[for="c1"] {
-    background-image: url(../../../../img/elementos/agua.jpg);
+    background-image: url(../../../../img/skaya/elementos/agua.jpg);
 }
 
 .card[for="c2"] {
-    background-image: url(../../../../img/elementos/fuego.jpg);
+    background-image: url(../../../../img/skaya/elementos/fuego.jpg);
 }
 
 .card[for="c3"] {
-    background-image: url(../../../../img/elementos/vida.jpg);
+    background-image: url(../../../../img/skaya/elementos/vida.jpg);
 }
 
 .card[for="c4"] {
-    background-image: url(../../../../img/elementos/roca.jpg);
+    background-image: url(../../../../img/skaya/elementos/roca.jpg);
 }

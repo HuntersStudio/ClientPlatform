@@ -13,8 +13,10 @@
   "author": "The Hunter Studios",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.8",
     "electron": "^28.1.2",
-    "electron-packager": "^17.1.2"
+    "electron-packager": "^17.1.2",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
     "electron-builder": "^24.9.1",
