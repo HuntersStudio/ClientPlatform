@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,16 +10,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap">
 
     <!-- ICONOS -->
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'> <!-- CORREO -->
-    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'> <!-- Ojo -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     
-
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/top_bar.css">
 
     <title>Document</title>
 </head>
-
 <body>
     <div class="mainApp">
         <div class="top-bar">
@@ -31,8 +28,9 @@
                             <i class="fi fi-sr-align-justify"></i>
                             <ul class="left-menu">
                                 <li id="reload-btn"><a href="#">Reload</a></li>
-                                <li><a href="#">Settings</a></li>
-                                <li><a href="#">Exit</a></li>
+                                <li><a href="#" onclick="generar_ventana('./ventanas/ajustes.html');">Settings</a></li>
+                                <li><a id="dev-tools-btn" href="#">Dev Tools</a></li>
+                                <li><a id="exit-btn" href="./login.html">Exit</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -63,40 +61,39 @@
 
                         <div class="input-contenedor">
                             <i class="fi fi-rr-envelope"></i>
-                            <input type="email" required>
-                            <label for="#">Email</label>
+                            <input id="user" type="mail" required>
+                            <label for="user">Email</label>
                         </div>
 
                         <div class="input-contenedor">
                             <i class="fi fi-rr-eye-crossed mostrar_contraseña" data-password-field="user_password"
                                 onclick="mostrar(this, 'password-field')"></i>
-                            <input type="password" class="password-field" required>
-                            <label for="#">Contraseña</label>
+                            <input id="password" type="password" class="password-field" required>
+                            <label for="password">Contraseña</label>
                         </div>
 
                         <div class="olvidar">
-                            <label for="#">
-                                <input type="checkbox"> Recordar.
-                                <a href="#">Olvidé la constraseña</a>
+                            <label for="remember">
+                                <input type="checkbox" id="remember"> Recordar.
+                                <a href="#">Olvidé la contraseña</a>
                             </label>
+                        </div>
+
+                        <div>
+                            <button id="login-button" type="submit">Acceder</button>
                         </div>
                     </form>
 
-                    <div>
-                        <a href="../index.html"><button>Acceder</button></a>
-
-                        <div class="registrar">
-                            <p>No tengo cuenta <a href="./registro.html">Crear una</a></p>
-                        </div>
+                    <div class="registrar">
+                        <p>No tengo cuenta <a href="./registro.html">Crear una</a></p>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <script src="../js/login.js"></script>
+    <script src="../js/API/login.js"></script>
     <script src="../js/mostrar_contraseña.js"></script>
     <script src="../js/top_bar.js"></script>
-
 </body>
 </html>

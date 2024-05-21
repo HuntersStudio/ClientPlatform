@@ -3,10 +3,13 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    color: var(--platinum);
 
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 100;
+    font-weight: 200;
     font-style: normal;
 }
 
@@ -22,11 +25,13 @@ section {
 }
 
 .login .contenedor {
+    margin-top: -50px;
     height: 450px;
     width: 400px;
 }
 
 .registro .contenedor {
+    margin-top: -50px;
     height: 580px;
     width: 400px;
 }
@@ -131,6 +136,7 @@ input:valid ~ label {
 
 .terminos label input,
 .olvidar label input {
+    margin-top: 25px;
     accent-color: var(--black);
 } 
 
@@ -181,4 +187,12 @@ button:hover {
 
 .registrar p a:hover {
     text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    display: block;
+    position: relative;
+    top: 5px;
 }

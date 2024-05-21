@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import com.user_service.user_service.Dto.UserDto;
 import com.user_service.user_service.entity.User;
 import com.user_service.user_service.repository.UserDao;
@@ -64,6 +65,4 @@ public class UserService implements IUserService{
 
         return userdto;
     }
-
- 
 }
