@@ -1,4 +1,4 @@
-package com.consumer_service.consumer_service.Dto;
+package com.consumer_service.consumer_service.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,15 +10,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
+public class ProductType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
-    private String username;
-    private String role;
-    private String password;
-    private String email;
+    private String productType;
+    
 
+    public ProductType(String productType) {
+        this.productType = productType;
+    }
 }

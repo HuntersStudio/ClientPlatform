@@ -1,4 +1,4 @@
-package com.consumer_service.consumer_service.entiy;
+package com.consumer_service.consumer_service.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

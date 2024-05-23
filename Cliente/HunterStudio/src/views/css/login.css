@@ -27,13 +27,13 @@ section {
 .login .contenedor {
     margin-top: -50px;
     height: 450px;
-    width: 400px;
+    width: 420px;
 }
 
 .registro .contenedor {
     margin-top: -50px;
     height: 580px;
-    width: 400px;
+    width: 420px;
 }
 
 .contenedor {
@@ -92,6 +92,10 @@ input:valid ~ label {
     font-size: 1.6rem;
     top: 20px;
     right: 8px;
+}
+
+.input-contenedor div {
+    position: relative;
 }
 
 .olvidar {
@@ -189,10 +193,36 @@ button:hover {
     text-decoration: underline;
 }
 
-.error-message {
-    color: red;
-    font-size: 0.8em;
-    display: block;
+.error-icon {
+    display: none;
     position: absolute;
-    top: 15px;
+    left: 0;
+    color: red;
+}
+
+.terms-icon {
+    position: absolute;
+    top: 18px;
+    left: 50px;
+    font-size: 1.6rem;
+}
+
+/* Tooltip container */
+.error-icon:hover::after {
+    content: attr(title);
+    position: absolute;
+    background-color: #f44336;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    top: -5px;
+    right: 0px;
+    white-space: nowrap;
+    z-index: 5;
+}
+
+.terminos .error-icon:hover::after {
+    right: -100px;
+    font-size: 1rem;
+    top: -7px;
 }

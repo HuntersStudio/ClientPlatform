@@ -37,10 +37,10 @@ app.on('ready', () => {
 // Crear ventana flotante secundaria
 function crearVentana() {
     const ventana = new BrowserWindow({
-        frame: false, 
+        frame: false,
         modal: true,
         parent: main_window,
-        width: 800, 
+        width: 800,
         height: 600,
         webPreferences: {
             nodeIntegration: true,
@@ -54,12 +54,12 @@ ipcMain.on('abrir-ventana', (event, enlace_ventana) => {
     const ventana = new BrowserWindow({
         frame: false,
         modal: true,
-        parent: main_window, 
-        width: 800, 
+        parent: main_window,
+        width: 800,
         height: 600,
         webPreferences: {
             nodeIntegration: true,
-        } 
+        }
     });
     ventana.loadFile(enlace_ventana);
 });

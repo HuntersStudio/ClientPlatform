@@ -4,10 +4,10 @@ import java.util.List;
 
 import com.consumer_service.consumer_service.Dto.ProductDto;
 import com.consumer_service.consumer_service.Dto.UserDto;
-import com.consumer_service.consumer_service.entiy.Product;
-import com.consumer_service.consumer_service.entiy.ProductType;
-import com.consumer_service.consumer_service.entiy.Purchase;
-import com.consumer_service.consumer_service.entiy.User;
+import com.consumer_service.consumer_service.entity.Product;
+import com.consumer_service.consumer_service.entity.ProductType;
+import com.consumer_service.consumer_service.entity.Purchase;
+import com.consumer_service.consumer_service.entity.User;
 
 public interface IConsumerService {
 

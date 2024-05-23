@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.consumer_service.consumer_service.Dto.ProductDto;
 import com.consumer_service.consumer_service.Dto.UserDto;
-import com.consumer_service.consumer_service.entiy.ProductType;
-import com.consumer_service.consumer_service.entiy.Purchase;
+import com.consumer_service.consumer_service.entity.ProductType;
+import com.consumer_service.consumer_service.entity.Purchase;
 import com.consumer_service.consumer_service.service.ConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Map;
-
-
-
 
 
 @RestController
@@ -98,10 +95,6 @@ public class ConsumerController {
     public ResponseEntity<List<ProductType>> viewProductTypes(){
 
         return ResponseEntity.ok( consumerService.viewAllProductType());
-
     }
-
-    
-    
 }
 

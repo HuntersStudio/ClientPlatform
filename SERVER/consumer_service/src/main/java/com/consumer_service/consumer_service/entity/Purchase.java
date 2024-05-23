@@ -1,4 +1,4 @@
-package com.consumer_service.consumer_service.entiy;
+package com.consumer_service.consumer_service.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

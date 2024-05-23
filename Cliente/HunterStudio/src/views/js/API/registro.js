@@ -15,42 +15,49 @@ document.addEventListener("DOMContentLoaded", () => {
         const termsError = document.querySelector("#terms-error");
 
         // Restablecer mensajes de error
-        nameError.textContent = '';
-        emailError.textContent = '';
-        passwordError.textContent = '';
-        repeatPasswordError.textContent = '';
-        termsError.textContent = '';
+        nameError.style.display = 'none';
+        emailError.style.display = 'none';
+        passwordError.style.display = 'none';
+        repeatPasswordError.style.display = 'none';
+        termsError.style.display = 'none';
 
         let isValid = true;
-
+        
         if (!name) {
-            nameError.textContent = 'Por favor, introduce tu nombre.';
+            nameError.style.display = 'inline';
+            nameError.setAttribute('title', 'Por favor, introduce tu nombre.');
             isValid = false;
         }
 
         if (!email) {
-            emailError.textContent = 'Por favor, introduce tu email.';
+            emailError.style.display = 'inline';
+            emailError.setAttribute('title', 'Por favor, introduce tu email.');
             isValid = false;
         }
 
         if (!password) {
-            passwordError.textContent = 'Por favor, introduce tu contraseña.';
+            passwordError.style.display = 'inline';
+            passwordError.setAttribute('title', 'Por favor, introduce tu contraseña.');
             isValid = false;
         } else if (password.length < 8) {
-            passwordError.textContent = 'La contraseña debe tener al menos 8 caracteres.';
+            passwordError.style.display = 'inline';
+            passwordError.setAttribute('title', 'La contraseña debe tener al menos 8 caracteres.');
             isValid = false;
         }
 
         if (!repeatPassword) {
-            repeatPasswordError.textContent = 'Por favor, repite tu contraseña.';
+            repeatPasswordError.style.display = 'inline';
+            repeatPasswordError.setAttribute('title', 'Por favor, repite tu contraseña.');
             isValid = false;
         } else if (password !== repeatPassword) {
-            repeatPasswordError.textContent = 'Las contraseñas no coinciden.';
+            repeatPasswordError.style.display = 'inline';
+            repeatPasswordError.setAttribute('title', 'Las contraseñas no coinciden.');
             isValid = false;
         }
 
         if (!terms) {
-            termsError.textContent = 'Debes aceptar los términos y condiciones.';
+            termsError.style.display = 'inline';
+            termsError.setAttribute('title', 'Debes aceptar los términos y condiciones.');
             isValid = false;
         }
 
@@ -62,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 password: password
             };
 
-            fetch('http://localhost:8003/auth/register', {
+            fetch('http://localhost:8003/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
