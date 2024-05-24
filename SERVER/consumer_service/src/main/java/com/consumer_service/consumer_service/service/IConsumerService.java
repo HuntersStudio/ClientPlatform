@@ -11,14 +11,25 @@ import com.consumer_service.consumer_service.entity.User;
 
 public interface IConsumerService {
 
-    public ProductDto getProduct(int id);
-    public UserDto convertUserToDto(User user);
-    public ProductDto convertProductToDto(Product product);
-    public void addPurchase(String username,String productname,int quantity);
-    public UserDto getUser(String name);
-    public void addProductType(String name);
-    public void updateProductStock(int id,int newStock);
-    public List<ProductType> viewAllProductType();
-    public ProductDto getProductByName(String name);
-     public List<Purchase> viewPurchasesByName(String name);
+    ProductDto getProduct(int id);
+
+    UserDto registerUser(String username, String password, String role);
+
+    UserDto getUser(String name);
+
+    void addProductType(String name);
+
+    void updateProductStock(int id, int newStock);
+
+    List<ProductType> viewAllProductType();
+
+    ProductDto getProductByName(String name);
+
+    void addPurchase(String username, String productName, int quantity);
+
+    List<Purchase> viewPurchasesByName(String username);
+
+    ProductDto convertProductToDto(Product product);
+
+    UserDto convertUserToDto(User user);
 }

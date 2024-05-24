@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" version="3.0">
+    <persistence-unit name="consumerServicePU">
+        <class>com.consumer_service.consumer_service.entity.Purchase</class>
+        <class>com.consumer_service.consumer_service.entity.Product</class>
+        <class>com.consumer_service.consumer_service.entity.User</class>
+        <class>com.consumer_service.consumer_service.entity.ProductType</class>
+        <properties>
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/consumer_service_db"/>
+            <property name="jakarta.persistence.jdbc.user" value="yourusername"/>
+            <property name="jakarta.persistence.jdbc.password" value="yourpassword"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+        </properties>
+    </persistence-unit>
+</persistence>
