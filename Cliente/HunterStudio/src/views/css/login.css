@@ -197,7 +197,6 @@ button:hover {
     display: none;
     position: absolute;
     left: 0;
-    color: red;
 }
 
 .terms-icon {
@@ -211,7 +210,7 @@ button:hover {
 .error-icon:hover::after {
     content: attr(title);
     position: absolute;
-    background-color: #f44336;
+    background-color: #cc372d;
     color: white;
     padding: 5px;
     border-radius: 4px;

@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sessionStorage.setItem("userName", user);
 
         fetch(createUrl, {
-            method: 'GET'
+            method: 'GET',
         })
             .then(response => {
                 if (!response.ok) {
