@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#register-button").addEventListener("click", (event) => {
-        event.preventDefault(); // Evita el comportamiento por defecto del formulario
-
+        event.preventDefault();
+        
         const name = document.querySelector("#name").value;
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const repeatPasswordError = document.querySelector("#repeat-password-error");
         const termsError = document.querySelector("#terms-error");
 
-        // Restablecer mensajes de error
         nameError.style.display = 'none';
         emailError.style.display = 'none';
         passwordError.style.display = 'none';
@@ -62,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         if (isValid) {
-            // Si todo está bien, enviar el formulario
             const userData = {
                 name: name,
                 email: email,
@@ -80,12 +78,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!response.ok) {
                     throw new Error('La respuesta de la red no fue correcta');
                 }
-                return response.json(); // Convertir la respuesta a JSON
+                return response.json(); 
             })
             .then(data => {
                 console.log(data);
                 alert("Registro exitoso");
-                window.location.href = "./login.html"; // Redirigir al login después del registro exitoso
+                window.location.href = "./login.html";
             })
             .catch(error => {
                 console.error('Error:', error);

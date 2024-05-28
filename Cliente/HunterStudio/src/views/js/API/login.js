@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#login-button").addEventListener("click", (event) => {
-        event.preventDefault(); // Evita el comportamiento por defecto del formulario
+        event.preventDefault();
 
         const user = document.querySelector("#user").value;
         const password = document.querySelector("#password").value;
@@ -25,25 +25,38 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
         }
 
-        const createUrl = 'http://localhost:8003/auth/login/' + user + '/' + password;
+        if (!isValid) {
+            return;
+        }
 
-        sessionStorage.setItem("userName", user);
+        const createUrl = 'http://localhost:8003/auth/login';
+
+        const credentials = {
+            name: user,
+            password: password
+        };
 
         fetch(createUrl, {
-            method: 'GET',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(credentials)
         })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('La respuesta de la red no fue correcta');
-                }
-                return response.text(); // Convertir la respuesta a texto
-            })
-            .then(data => {
-                console.log(data);
-                window.location.href = "../index.html";
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('La respuesta de la red no fue correcta');
+            }
+            return response.text();
+        })
+        .then(data => {
+            console.log(data);
+            sessionStorage.setItem("name", user); // Guarda el nombre de usuario en sessionStorage
+            sessionStorage.setItem("token", data); // Aqui se guarda el token
+            window.location.href = "../index.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     });
 });

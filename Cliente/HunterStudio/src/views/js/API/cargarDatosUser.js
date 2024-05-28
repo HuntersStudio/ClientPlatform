@@ -1,29 +1,36 @@
-    const campoUser = document.getElementById('user_name')
-    const campoEmail = document.getElementById('email')
-    var contraseña = document.getElementById('pass')
-    const categoria = document.getElementById('categoria')
-    const userName = sessionStorage.getItem('userName')
-    const createUrl = 'http://localhost:8003/consumer/getUserByName/' + encodeURIComponent(userName)
-  
-    fetch(createUrl, {
-      method: 'GET'
+document.addEventListener('DOMContentLoaded', function () {
+
+  const campoUser = document.querySelector('.user_name');
+  const campoEmail = document.querySelector('.user_mail');
+  const categoria = document.querySelector('.categoria');
+
+  const token = sessionStorage.getItem('token');
+
+  if (token) {
+    const userUrl = 'http://localhost:8003/consumer/getUserDetails';
+
+    fetch(userUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      }
     })
       .then(response => {
         if (!response.ok) {
-          throw new Error('La respuesta de la red no fue correcta')
+          throw new Error('La respuesta de la red no fue correcta');
         }
-        return response.json()
+        return response.json();
       })
       .then(data => {
-        if (data.username) {
-          campoUser.textContent = data.username
-          campoEmail.textContent = data.email
-          categoria.textContent = data.role
-          contraseña.value = data.password        
-        } else {
-          console.error('La respuesta no contiene el nombre de usuario esperado')
-        }
+        campoUser.textContent = data.username;
+        campoEmail.textContent = data.email;
+        categoria.textContent = data.role;
       })
       .catch(error => {
-        console.error('Error:', error)
-      })
+        console.error('Error al obtener los detalles del usuario:', error);
+      });
+  } else {
+    console.error('No hay token en sessionStorage');
+  }
+});
