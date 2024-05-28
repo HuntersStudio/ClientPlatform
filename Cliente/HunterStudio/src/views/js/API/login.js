@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
         }
 
-        const createUrl = 'http://localhost:8003/auth/login/' + user;
+        const createUrl = 'http://localhost:8003/auth/login/' + user + '/' + password;
 
         sessionStorage.setItem("userName", user);
 
