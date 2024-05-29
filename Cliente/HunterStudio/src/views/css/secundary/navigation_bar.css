@@ -39,6 +39,7 @@
 .list-item { 
   background: var(--black);
   text-align: center;
+  font-weight: 300;
   color: var(--platinum);
   align-items: center;
   text-align: center;

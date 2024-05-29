@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const user = document.querySelector("#user").value;
         const password = document.querySelector("#password").value;
+        const remember = document.querySelector("#remember").value;
 
         const userError = document.querySelector("#email-error");
         const passError = document.querySelector("#password-error");
@@ -51,8 +52,12 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(data => {
             console.log(data);
-            sessionStorage.setItem("name", user); // Guarda el nombre de usuario en sessionStorage
-            sessionStorage.setItem("token", data); // Aqui se guarda el token
+            if(remember){
+                localStorage.setItem("password", password);
+            }
+        
+            sessionStorage.setItem("name", user);
+            sessionStorage.setItem("token", data);
             window.location.href = "../index.html";
         })
         .catch(error => {
