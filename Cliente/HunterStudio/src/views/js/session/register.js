@@ -81,15 +81,20 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!response.ok) {
                 return response.text().then(errorMessage => {
 
-                    if (errorMessage === 'Username already exists') {
+                    if(errorMessage === 'Username and Email already exists') {
                         nameError.style.display = 'inline';
                         nameError.setAttribute('title', 'El nombre de usuario ya está en uso.');
-                    }
-
-                    if (errorMessage === 'Email already exists') {
                         emailError.style.display = 'inline';
                         emailError.setAttribute('title', 'Esta cuenta de correo ya está en uso.');
 
+                    } if (errorMessage === 'Username already exists') {
+                        nameError.style.display = 'inline';
+                        nameError.setAttribute('title', 'El nombre de usuario ya está en uso.');
+
+                    } else if (errorMessage === 'Email already exists') {
+                        emailError.style.display = 'inline';
+                        emailError.setAttribute('title', 'Esta cuenta de correo ya está en uso.');
+ 
                     } else {
                         console.error('Error no manejado:', errorMessage);
                     }

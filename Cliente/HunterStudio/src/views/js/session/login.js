@@ -52,8 +52,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                         
                          if (errorMessage === 'Incorrect credentials') {
+                            userError.style.display = 'inline';
+                            userError.setAttribute('title', 'Usuario o contraseña incorrecta.');
                             passError.style.display = 'inline';
-                            passError.setAttribute('title', 'Credenciales incorrectas.');
+                            passError.setAttribute('title', 'Usuario o contraseña incorrecta.');
 
                         } else {
                             console.error('Error:', errorMessage);

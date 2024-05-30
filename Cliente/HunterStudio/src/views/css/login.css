@@ -196,7 +196,8 @@ button:hover {
 .error-icon {
     display: none;
     position: absolute;
-    left: 0;
+    top: -7px;
+    left: -7px;
 }
 
 .error-icon:hover::after {
@@ -214,7 +215,7 @@ button:hover {
 
 .terms-icon {
     position: absolute;
-    top: 18px;
+    top: 435px;
     left: 25px;
     font-size: 1.6rem;
 }
@@ -222,5 +223,5 @@ button:hover {
 .terminos .error-icon:hover::after {
     right: -60px;
     font-size: 1rem;
-    top: -7px;
+    top: 410px;
 }
