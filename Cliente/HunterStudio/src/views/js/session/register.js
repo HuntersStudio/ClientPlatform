@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#register-button").addEventListener("click", (event) => {
         event.preventDefault();
-        
+
         const name = document.querySelector("#name").value;
         const email = document.querySelector("#email").value;
         const password = document.querySelector("#password").value;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         termsError.style.display = 'none';
 
         let isValid = true;
-        
+
         if (!name) {
             nameError.style.display = 'inline';
             nameError.setAttribute('title', 'Por favor, introduce tu nombre.');
@@ -60,35 +60,52 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
         }
 
-        if (isValid) {
-            const userData = {
-                name: name,
-                email: email,
-                password: password
-            };
-
-            fetch('http://localhost:8001/user/addUser', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(userData)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('La respuesta de la red no fue correcta');
-                }
-                return response.json(); 
-            })
-            .then(data => {
-                console.log(data);
-                alert("Registro exitoso");
-                window.location.href = "./login.html";
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert("Error en el registro");
-            });
+        if (!isValid) {
+            return;
         }
+
+        const userData = {
+            name: name,
+            email: email,
+            password: password
+        };
+
+        fetch('http://localhost:8003/consumer/addUser', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(errorMessage => {
+
+                    if (errorMessage === 'Username already exists') {
+                        nameError.style.display = 'inline';
+                        nameError.setAttribute('title', 'El nombre de usuario ya está en uso.');
+                    }
+
+                    if (errorMessage === 'Email already exists') {
+                        emailError.style.display = 'inline';
+                        emailError.setAttribute('title', 'Esta cuenta de correo ya está en uso.');
+
+                    } else {
+                        console.error('Error no manejado:', errorMessage);
+                    }
+                    throw new Error(errorMessage);
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+
+            alert("Registro exitoso");
+            window.location.href = "./login.html";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
     });
 });

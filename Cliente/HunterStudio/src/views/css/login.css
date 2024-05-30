@@ -199,13 +199,6 @@ button:hover {
     left: 0;
 }
 
-.terms-icon {
-    position: absolute;
-    top: 18px;
-    left: 50px;
-    font-size: 1.6rem;
-}
-
 .error-icon:hover::after {
     content: attr(title);
     position: absolute;
@@ -214,13 +207,20 @@ button:hover {
     padding: 5px;
     border-radius: 4px;
     top: -5px;
-    right: 0px;
+    right: 0;
     white-space: nowrap;
     z-index: 5;
 }
 
+.terms-icon {
+    position: absolute;
+    top: 18px;
+    left: 25px;
+    font-size: 1.6rem;
+}
+
 .terminos .error-icon:hover::after {
-    right: -100px;
+    right: -60px;
     font-size: 1rem;
     top: -7px;
 }

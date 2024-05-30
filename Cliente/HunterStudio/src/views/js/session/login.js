@@ -30,38 +30,49 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        const createUrl = 'http://localhost:8003/auth/login';
-
         const credentials = {
             name: user,
             password: password
         };
 
-        fetch(createUrl, {
+        fetch('http://localhost:8003/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(credentials)
         })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('La respuesta de la red no fue correcta');
-            }
-            return response.text();
-        })
-        .then(data => {
-            console.log(data);
-            if(remember){
-                localStorage.setItem("password", password);
-            }
-        
-            sessionStorage.setItem("name", user);
-            sessionStorage.setItem("token", data);
-            window.location.href = "../index.html";
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(errorMessage => {
+
+                        if (errorMessage === 'Username not exists') {
+                            userError.style.display = 'inline';
+                            userError.setAttribute('title', 'El nombre de usuario no existe.');
+                        }
+                        
+                         if (errorMessage === 'Incorrect credentials') {
+                            passError.style.display = 'inline';
+                            passError.setAttribute('title', 'Credenciales incorrectas.');
+
+                        } else {
+                            console.error('Error:', errorMessage);
+
+                        }
+                        throw new Error(errorMessage);
+                    });
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+
+                sessionStorage.setItem("name", user);
+                sessionStorage.setItem("token", data);
+                window.location.href = "../index.html";
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     });
 });
