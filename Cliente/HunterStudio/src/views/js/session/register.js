@@ -1,3 +1,29 @@
+function showAlert(message) {
+    const alertContainer = document.createElement('div');
+    alertContainer.className = 'alert-container';
+
+    const alertMessage = document.createElement('span');
+    alertMessage.className = 'alert-message';
+    alertMessage.textContent = message;
+
+    const closeButton = document.createElement('button');
+    closeButton.className = 'alert-close';
+    closeButton.innerHTML = '<i class="fi fi-ts-circle-xmark"></i>';
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(alertContainer);
+    });
+
+    alertContainer.appendChild(alertMessage);
+    alertContainer.appendChild(closeButton);
+    document.body.appendChild(alertContainer);
+
+    setTimeout(() => {
+        if (alertContainer.parentNode) {
+            document.body.removeChild(alertContainer);
+        }
+    }, 5000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#register-button").addEventListener("click", (event) => {
         event.preventDefault();
@@ -70,6 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
             email: email
         };
 
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('spinner').style.display = 'block';
+
         fetch('http://localhost:8004/service/addUser', {
             method: 'POST',
             headers: {
@@ -106,11 +135,19 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             console.log(data);
 
-            alert("Registro exitoso");
-            window.location.href = "./login.html";
+            window.addEventListener('load', () => {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('spinner').style.display = 'none';
+                window.location.href = "./login.html";
+            });
         })
         .catch(error => {
             console.error('Error:', error);
+            if (error instanceof TypeError) {
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('spinner').style.display = 'none';
+                showAlert('No se pudo establecer la conexión con el servidor. Por favor, inténtalo de nuevo más tarde.');
+            }
         });
     });
 });

@@ -1,3 +1,29 @@
+function showAlert(message) {
+    const alertContainer = document.createElement('div');
+    alertContainer.className = 'alert-container';
+
+    const alertMessage = document.createElement('span');
+    alertMessage.className = 'alert-message';
+    alertMessage.textContent = message;
+
+    const closeButton = document.createElement('button');
+    closeButton.className = 'alert-close';
+    closeButton.innerHTML = '<i class="fi fi-ts-circle-xmark"></i>';
+    closeButton.addEventListener('click', () => {
+        document.body.removeChild(alertContainer);
+    });
+
+    alertContainer.appendChild(alertMessage);
+    alertContainer.appendChild(closeButton);
+    document.body.appendChild(alertContainer);
+
+    setTimeout(() => {
+        if (alertContainer.parentNode) {
+            document.body.removeChild(alertContainer);
+        }
+    }, 5000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#login-button").addEventListener("click", (event) => {
         event.preventDefault();
@@ -16,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!user) {
             userError.style.display = 'inline';
-            userError.setAttribute('title', 'Por favor, introduce tu email o nombre.');
+            userError.setAttribute('title', 'Por favor, introduce tu nombre o email.');
             isValid = false;
         }
 
@@ -36,6 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
             password: password
         };
 
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('spinner').style.display = 'block';
+
         fetch('http://localhost:8004/auth/login', {
             method: 'POST',
             headers: {
@@ -49,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (errorMessage === 'Username not exists') {
                             userError.style.display = 'inline';
-                            userError.setAttribute('title', 'El nombre de usuario o Email no existen.');
+                            userError.setAttribute('title', 'El nombre de usuario o email no existen.');
                         }
                         
                         if (errorMessage === 'Incorrect credentials') {
@@ -72,12 +101,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 localStorage.setItem("name", user);
                 sessionStorage.setItem("token", data.token);
-                window.location.href = "../index.html";
+
+                window.addEventListener('load', () => {
+                    document.getElementById('overlay').style.display = 'none';
+                    document.getElementById('spinner').style.display = 'none';
+                    window.location.href = "../index.html";
+                });
 
                 password();
             })
             .catch(error => {
                 console.error('Error:', error);
+                if (error instanceof TypeError) {
+                    document.getElementById('overlay').style.display = 'none';
+                    document.getElementById('spinner').style.display = 'none';
+                    showAlert('No se pudo establecer la conexión con el servidor. Por favor, inténtalo de nuevo más tarde.');
+                }
             });
     });
 });

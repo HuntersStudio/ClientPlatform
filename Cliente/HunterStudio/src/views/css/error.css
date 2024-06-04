@@ -1,0 +1,71 @@
+@import url(./colores.css);
+
+
+.error-icon {
+    display: none;
+    position: absolute;
+    top: -7px;
+    left: -7px;
+}
+
+.error-icon:hover::after {
+    content: attr(title);
+    position: absolute;
+    background-color: #cc372d;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    top: -5px;
+    right: 0;
+    white-space: nowrap;
+    z-index: 5;
+}
+
+
+.terminos .error-icon:hover::after {
+    right: -60px;
+    font-size: 1rem;
+    top: 410px;
+}
+
+.alert-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #cc372d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+.alert-message {
+    flex-grow: 1;
+}
+
+.alert-close {
+    position: absolute;
+    margin-left: 10px;
+    right: 15px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateX(-50%) translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
