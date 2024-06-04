@@ -104,11 +104,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("name", user);
                 sessionStorage.setItem("token", data.token);
 
-                window.onload = function() {
-                    document.getElementById('overlay').style.display = 'none';
-                    document.getElementById('spinner').style.display = 'none';
-                    window.location.href = "../index.html";
-                };
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('spinner').style.display = 'none';
+                //window.location.href = "../index.html";
+
             })
             .catch(error => {
                 console.error('Error:', error);

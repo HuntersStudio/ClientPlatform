@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
             emailError.style.display = 'inline';
             emailError.setAttribute('title', 'Por favor, introduce tu email.');
             isValid = false;
+        } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+            emailError.style.display = 'inline';
+            emailError.setAttribute('title', 'Por favor, introduce un email válido.');
+            isValid = false;
         }
 
         if (!password) {
@@ -92,8 +96,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const userData = {
             userName: name,
-            password: password,
-            email: email
+            email: email,
+            password: password
         };
 
         document.getElementById('overlay').style.display = 'block';
@@ -107,45 +111,44 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify(userData)
         })
         .then(response => {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('spinner').style.display = 'none';
+            
             if (!response.ok) {
                 return response.text().then(errorMessage => {
-
-                    if(errorMessage === 'Username and Email already exists') {
+                    if (errorMessage === 'Username and Email already exists') {
                         nameError.style.display = 'inline';
                         nameError.setAttribute('title', 'El nombre de usuario ya está en uso.');
                         emailError.style.display = 'inline';
                         emailError.setAttribute('title', 'Esta cuenta de correo ya está en uso.');
-
-                    } if (errorMessage === 'Username already exists') {
+                    } else if (errorMessage === 'Username already exists') {
                         nameError.style.display = 'inline';
                         nameError.setAttribute('title', 'El nombre de usuario ya está en uso.');
-
                     } else if (errorMessage === 'Email already exists') {
                         emailError.style.display = 'inline';
                         emailError.setAttribute('title', 'Esta cuenta de correo ya está en uso.');
- 
                     } else {
                         console.error('Error no manejado:', errorMessage);
                     }
                     throw new Error(errorMessage);
                 });
             }
-            return response.json();
+            return response.text().then(text => {
+                try {
+                    return JSON.parse(text);
+                } catch (e) {
+                    return text;
+                }
+            });
         })
         .then(data => {
             console.log(data);
 
-            window.addEventListener('load', () => {
-                document.getElementById('overlay').style.display = 'none';
-                document.getElementById('spinner').style.display = 'none';
-                window.location.href = "./login.html";
-            });
+            window.location.href = "./login.html";
         })
         .catch(error => {
             console.error('Error:', error);
             if (error instanceof TypeError) {
-                document.getElementById('overlay').style.display = 'none';
-                document.getElementById('spinner').style.display = 'none';
                 showAlert('No se pudo establecer la conexión con el servidor. Por favor, inténtalo de nuevo más tarde.');
             }
         });
