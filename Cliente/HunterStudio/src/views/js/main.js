@@ -2,7 +2,6 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
-const showAlert = require('./session/alert');
 
 // Declaramos variables
 let main_window

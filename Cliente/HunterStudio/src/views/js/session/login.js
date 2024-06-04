@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!isValid) {
             return;
         }
-          
 
         const credentials = {
             username: user,
@@ -76,11 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (!response.ok) {
                     return response.text().then(errorMessage => {
 
+                        document.getElementById('overlay').style.display = 'none';
+                        document.getElementById('spinner').style.display = 'none';
+
                         if (errorMessage === 'Username not exists') {
                             userError.style.display = 'inline';
                             userError.setAttribute('title', 'El nombre de usuario o email no existen.');
                         }
-                        
+
                         if (errorMessage === 'Incorrect credentials') {
                             userError.style.display = 'inline';
                             userError.setAttribute('title', 'Usuario o Email incorrectos.');
@@ -102,13 +104,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 localStorage.setItem("name", user);
                 sessionStorage.setItem("token", data.token);
 
-                window.addEventListener('load', () => {
+                window.onload = function() {
                     document.getElementById('overlay').style.display = 'none';
                     document.getElementById('spinner').style.display = 'none';
                     window.location.href = "../index.html";
-                });
-
-                password();
+                };
             })
             .catch(error => {
                 console.error('Error:', error);
