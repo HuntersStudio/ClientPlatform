@@ -29,13 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!isValid) {
             return;
         }
+          
 
         const credentials = {
-            name: user,
+            username: user,
             password: password
         };
 
-        fetch('http://localhost:8003/auth/login', {
+        fetch('http://localhost:8004/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -48,14 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (errorMessage === 'Username not exists') {
                             userError.style.display = 'inline';
-                            userError.setAttribute('title', 'El nombre de usuario no existe.');
+                            userError.setAttribute('title', 'El nombre de usuario o Email no existen.');
                         }
                         
-                         if (errorMessage === 'Incorrect credentials') {
+                        if (errorMessage === 'Incorrect credentials') {
                             userError.style.display = 'inline';
-                            userError.setAttribute('title', 'Usuario o contraseña incorrecta.');
+                            userError.setAttribute('title', 'Usuario o Email incorrectos.');
                             passError.style.display = 'inline';
-                            passError.setAttribute('title', 'Usuario o contraseña incorrecta.');
+                            passError.setAttribute('title', 'Contraseña incorrecta.');
 
                         } else {
                             console.error('Error:', errorMessage);
@@ -69,9 +70,11 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 console.log(data);
 
-                sessionStorage.setItem("name", user);
-                sessionStorage.setItem("token", data);
+                localStorage.setItem("name", user);
+                sessionStorage.setItem("token", data.token);
                 window.location.href = "../index.html";
+
+                password();
             })
             .catch(error => {
                 console.error('Error:', error);

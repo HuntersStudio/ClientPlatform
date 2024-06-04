@@ -65,12 +65,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const userData = {
-            name: name,
-            email: email,
-            password: password
+            userName: name,
+            password: password,
+            email: email
         };
 
-        fetch('http://localhost:8003/consumer/addUser', {
+        fetch('http://localhost:8004/service/addUser', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

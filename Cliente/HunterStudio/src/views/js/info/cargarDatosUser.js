@@ -1,11 +1,13 @@
+
 const campoUser = document.querySelector('.user_name');
 const campoEmail = document.querySelector('.user_mail');
-const categoria = document.querySelector('.categoria');
+const categoria = document.querySelector('.num_categoria');
+const fecha = document.querySelector('.fecha');
 
 const token = sessionStorage.getItem('token');
 
 if (token) {
-  const userUrl = 'http://localhost:8003/consumer/getUserDetails';
+  const userUrl = 'http://localhost:8004/service/getUserDetails';
 
   fetch(userUrl, {
     method: 'GET',
@@ -21,9 +23,10 @@ if (token) {
       return response.json();
     })
     .then(data => {
-      campoUser.textContent = data.username;
+      campoUser.textContent = data.userName;
       campoEmail.textContent = data.email;
-      categoria.textContent = data.role;
+      categoria.textContent = data.categoryLevel;
+      fecha.textContent = data.registrationDate;
     })
     .catch(error => {
       console.error('Error al obtener los detalles del usuario:', error);
