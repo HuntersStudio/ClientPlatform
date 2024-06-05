@@ -114,31 +114,25 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('overlay').style.display = 'none';
             document.getElementById('spinner').style.display = 'none';
             
-            if (!response.ok) {
-                return response.text().then(errorMessage => {
-                    if (errorMessage === 'Username and Email already exists') {
+            return response.json().then(data => {
+                if (!response.ok) {
+                    if (data.error === 'Username and Email already exists') {
                         nameError.style.display = 'inline';
                         nameError.setAttribute('title', 'El nombre de usuario ya está en uso.');
                         emailError.style.display = 'inline';
                         emailError.setAttribute('title', 'Esta cuenta de correo ya está en uso.');
-                    } else if (errorMessage === 'Username already exists') {
+                    } else if (data.error === 'Username already exists') {
                         nameError.style.display = 'inline';
                         nameError.setAttribute('title', 'El nombre de usuario ya está en uso.');
-                    } else if (errorMessage === 'Email already exists') {
+                    } else if (data.error === 'Email already exists') {
                         emailError.style.display = 'inline';
                         emailError.setAttribute('title', 'Esta cuenta de correo ya está en uso.');
                     } else {
-                        console.error('Error no manejado:', errorMessage);
+                        console.error('Error no manejado:', data.error);
                     }
-                    throw new Error(errorMessage);
-                });
-            }
-            return response.text().then(text => {
-                try {
-                    return JSON.parse(text);
-                } catch (e) {
-                    return text;
+                    throw new Error(data.error);
                 }
+                return data;
             });
         })
         .then(data => {

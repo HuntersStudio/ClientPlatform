@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 document.getElementById('overlay').style.display = 'none';
                 document.getElementById('spinner').style.display = 'none';
-                //window.location.href = "../index.html";
+                window.location.href = "../index.html";
 
             })
             .catch(error => {
