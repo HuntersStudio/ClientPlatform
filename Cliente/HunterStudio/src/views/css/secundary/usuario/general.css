@@ -101,7 +101,7 @@ button:hover {
 
 .datos .password i{
     user-select: none;
-    padding-left: 10px; 
+    padding-left: 10px;
     color: var(--platinum);
     font-size: 16px;
 }
