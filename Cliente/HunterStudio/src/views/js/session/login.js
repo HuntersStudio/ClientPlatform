@@ -72,11 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
             body: JSON.stringify(credentials)
         })
             .then(response => {
+
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('spinner').style.display = 'none';
+
                 if (!response.ok) {
                     return response.text().then(errorMessage => {
-
-                        document.getElementById('overlay').style.display = 'none';
-                        document.getElementById('spinner').style.display = 'none';
 
                         if (errorMessage === 'Username not exists') {
                             userError.style.display = 'inline';
@@ -103,17 +104,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 localStorage.setItem("name", user);
                 sessionStorage.setItem("token", data.token);
+                
+                const role = data.role[0].role;
 
-                document.getElementById('overlay').style.display = 'none';
-                document.getElementById('spinner').style.display = 'none';
-                window.location.href = "../index.html";
+                // Redirigir según el rol del usuario
+                if (role === 'ADMIN') {
+                    window.location.href = "./admin/admin-index.html";
+                } else if (role === 'USER') {
+                    window.location.href = "./user/user-index.html";
+                } else {
+                    throw new Error("Error de permisos");
+                }
 
             })
             .catch(error => {
                 console.error('Error:', error);
                 if (error instanceof TypeError) {
-                    document.getElementById('overlay').style.display = 'none';
-                    document.getElementById('spinner').style.display = 'none';
                     showAlert('No se pudo establecer la conexión con el servidor. Por favor, inténtalo de nuevo más tarde.');
                 }
             });

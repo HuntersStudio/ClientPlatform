@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/secundary/crm/dashboard.css" />
+
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="dashboard">
+        <div class="card">
+            <div class="label">Ingresos por método de pago</div>
+            <canvas class="chart" id="payment-methods"></canvas>
+        </div>
+        <div class="card">
+            <div class="label">Ingresos por plataforma</div>
+            <canvas class="chart" id="platform-revenue"></canvas>
+        </div>
+        <div class="card">
+            <div class="label">Ingresos por edades de usuarios</div>
+            <canvas class="chart" id="user-ages"></canvas>
+        </div>
+        <div class="card">
+            <div class="label">Opiniones de los usuarios</div>
+            <canvas class="chart" id="user-reviews"></canvas>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/info/cargarDatosUser.js"></script>
+
+</body>
+</html>

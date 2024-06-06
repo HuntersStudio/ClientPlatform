@@ -21,7 +21,7 @@ app.on('ready', () => {
     });
 
     main_window.loadURL(url.format({
-        pathname: path.join(__dirname, '../html/login.html'),
+        pathname: path.join(__dirname, '../login.html'),
         protocol: 'file',
         slashes: true
     }))
@@ -33,21 +33,6 @@ app.on('ready', () => {
         app.quit();
     })
 });
-
-// Crear ventana flotante secundaria
-function crearVentana() {
-    const ventana = new BrowserWindow({
-        frame: false,
-        modal: true,
-        parent: main_window,
-        width: 800,
-        height: 600,
-        webPreferences: {
-            nodeIntegration: true,
-        }
-    });
-    ventana.loadFile('index.html');
-}
 
 // Escuchar solicitud para abrir una nueva ventana
 ipcMain.on('abrir-ventana', (event, enlace_ventana) => {

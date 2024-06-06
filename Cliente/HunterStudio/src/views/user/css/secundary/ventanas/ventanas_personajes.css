@@ -1,0 +1,32 @@
+@import url(../../colores.css);
+@import url('https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+
+.personaje {
+    align-items: center;
+    text-align: center;
+}
+
+.personaje .card {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column; /* Cambiar a disposición de columna */
+    align-items: center; /* Centrar horizontalmente */
+    text-align: center; /* Centrar el texto */
+}
+
+.personaje .card .foto {
+    height: 200px;
+    width: auto;
+}
+
+.personaje .card .nombre {
+    padding-top: 15px;
+    height: 80px;
+    width: auto;
+}
+
+.personaje .lore {
+    color: var(--platinum);
+    margin: 40px;
+}

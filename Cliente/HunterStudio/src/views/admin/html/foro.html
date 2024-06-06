@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/secundary/navigation_bar.css" />
+    <link rel="stylesheet" href="css/secundary/contenedor.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="body">
+        <aside class="menu-leteral">
+            <ul id="lista-lateral">
+                <li><a id="nav_bar_clicked" class="list-item" href="#" onclick="cargarContenido('html/foro/global.html', 'contex'); configurarLista(this);">Global</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('html/foro/instagram.html', 'contex'); configurarLista(this);">Instagram</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('html/foro/x.html', 'contex'); configurarLista(this);">X</a></li>
+                <li><a class="list-item" href="#" onclick="cargarContenido('html/foro/facebook.html', 'contex'); configurarLista(this);">Facebook</a></li>
+            </ul>
+        </aside>
+
+        <div class="contex"></div>  
+    </div>
+
+    <script>
+        cargarContenido('html/foro/global.html', 'contex');
+    </script>
+
+</body>
+</html>

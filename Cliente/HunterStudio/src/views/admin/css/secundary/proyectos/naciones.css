@@ -1,0 +1,29 @@
+@import url(../../colores.css);
+
+
+.naciones {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    margin-bottom: 100px;
+    overflow-x: hidden;
+}
+
+.card[for="c1"] {
+    background-image: url(../../../../../img/skaya/elementos/agua.jpg);
+}
+
+.card[for="c2"] {
+    background-image: url(../../../../../img/skaya/elementos/fuego.jpg);
+}
+
+.card[for="c3"] {
+    background-image: url(../../../../../img/skaya/elementos/vida.jpg);
+}
+
+.card[for="c4"] {
+    background-image: url(../../../../../img/skaya/elementos/roca.jpg);
+}
