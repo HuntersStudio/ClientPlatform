@@ -1,27 +1,10 @@
-function showAlert(message) {
-    const alertContainer = document.createElement('div');
-    alertContainer.className = 'alert-container';
+import { showAlert } from './showAlert.js';
 
-    const alertMessage = document.createElement('span');
-    alertMessage.className = 'alert-message';
-    alertMessage.textContent = message;
+const urlParams = new URLSearchParams(window.location.search);
+const registrationSuccess = urlParams.get('registrationSuccess');
 
-    const closeButton = document.createElement('button');
-    closeButton.className = 'alert-close';
-    closeButton.innerHTML = '<i class="fi fi-ts-circle-xmark"></i>';
-    closeButton.addEventListener('click', () => {
-        document.body.removeChild(alertContainer);
-    });
-
-    alertContainer.appendChild(alertMessage);
-    alertContainer.appendChild(closeButton);
-    document.body.appendChild(alertContainer);
-
-    setTimeout(() => {
-        if (alertContainer.parentNode) {
-            document.body.removeChild(alertContainer);
-        }
-    }, 5000);
+if (registrationSuccess === 'true') {
+    showAlert('Usuario agregado correctamente.', true);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -92,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         } else {
                             console.error('Error:', errorMessage);
-
                         }
                         throw new Error(errorMessage);
                     });
@@ -104,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 localStorage.setItem("name", user);
                 sessionStorage.setItem("token", data.token);
-                
+
                 const role = data.role[0].role;
 
                 // Redirigir según el rol del usuario
@@ -118,6 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             })
             .catch(error => {
+
+                document.getElementById('overlay').style.display = 'none';
+                document.getElementById('spinner').style.display = 'none';
+
                 console.error('Error:', error);
                 if (error instanceof TypeError) {
                     showAlert('No se pudo establecer la conexión con el servidor. Por favor, inténtalo de nuevo más tarde.');
