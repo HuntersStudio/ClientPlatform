@@ -37,7 +37,6 @@ document.addEventListener("contentReady", () => {
             itemActiveOld.classList.remove('active');
             thumbnailActiveOld.classList.remove('active');
 
-            // Añade la clase 'active' al ítem y miniatura activos
             items[itemActive].classList.add('active');
             thumbnails[itemActive].classList.add('active');
         }

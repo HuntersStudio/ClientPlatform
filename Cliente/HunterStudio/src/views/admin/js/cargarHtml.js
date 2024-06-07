@@ -3,10 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function cargarContenido(url, claseContenedor) {
+
     fetch(url)
         .then(response => response.text())
         .then(htmlText => {
-            var contenedor = document.getElementsByClassName(claseContenedor)[0];
+            const contenedor = document.getElementsByClassName(claseContenedor)[0];
             if (contenedor) {
                 contenedor.innerHTML = htmlText;
 
