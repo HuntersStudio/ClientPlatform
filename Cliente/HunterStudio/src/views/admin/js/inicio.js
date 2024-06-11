@@ -1,4 +1,4 @@
-document.addEventListener("contentReady", () => {
+(function() {
     let items = document.querySelectorAll('.slider .list .item');
     let next = document.getElementById('next');
     let prev = document.getElementById('prev');
@@ -53,4 +53,4 @@ document.addEventListener("contentReady", () => {
         });
     });
 
-});
+})();

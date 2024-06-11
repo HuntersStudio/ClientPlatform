@@ -1,21 +1,19 @@
-const res = require("express/lib/response");
-
 async function checkOrCreateChannel(channelName) {
-
     const token = sessionStorage.getItem('token');
 
-    const response = await fetch(`http://localhost:8003/channels/getChannelByName/${channelName}`, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + token
-        },
-    })
-        .then(async response => {
+    try {
+        const response = await fetch(`http://localhost:8003/channels/getChannelByName/${channelName}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            },
+        });
+
+        if (response.ok) {
             const channel = await response.json();
             return channel;
-        })
-        .catch(async error => {
+        } else if (response.status === 404) {
             const newChannel = { name: channelName, type: "publico" };
             const createResponse = await fetch('http://localhost:8003/channels/addChannel', {
                 method: 'POST',
@@ -32,21 +30,27 @@ async function checkOrCreateChannel(channelName) {
                 console.error('No se pudo crear el canal.');
                 return null;
             }
-        });
+        } else {
+            console.error('Error al obtener el canal:', response.statusText);
+            return null;
+        }
+    } catch (error) {
+        console.error('Error al obtener o crear el canal:', error);
+        return null;
+    }
 }
 
-document.addEventListener('contentReady', () => {
+(async function() {
     const channelName = 'general';
 
-    checkOrCreateChannel(channelName)
-        .then(channel => {
-            if (channel) {
-                console.log('El canal existe o se creó con éxito:', channel);
-            } else {
-                console.log('No se pudo obtener o crear el canal.');
-            }
-        })
-        .catch(error => {
-            console.error('Error al obtener o crear el canal:', error);
-        });
-});
+    try {
+        const channel = await checkOrCreateChannel(channelName);
+        if (channel) {
+            console.log('El canal existe o se creó con éxito:', channel);
+        } else {
+            console.log('No se pudo obtener o crear el canal.');
+        }
+    } catch (error) {
+        console.error('Error al obtener o crear el canal:', error);
+    }
+})();
