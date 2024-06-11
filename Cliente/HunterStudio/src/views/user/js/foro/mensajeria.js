@@ -39,16 +39,24 @@ if (typeof window.StompClient === 'undefined') {
         stompClient.activate();
 
         function sendMessage() {
-            const from = document.getElementById('from').value;
+
+            const from = "Marcos";
             const text = document.getElementById('text').value;
+
+            
+            const mensaje = {
+                from: from,
+                text: text
+            };
+
             stompClient.publish({
                 destination: '/app/chat',
-                body: JSON.stringify({ from, text })
+                body: JSON.stringify(mensaje)
             });
         }
 
         function showMessage(message) {
-            const response = document.getElementById('response');
+            const response = document.getElementById('messages');
             if (response) {
                 const p = document.createElement('p');
                 p.appendChild(document.createTextNode(`${message.from}: ${message.text}`));

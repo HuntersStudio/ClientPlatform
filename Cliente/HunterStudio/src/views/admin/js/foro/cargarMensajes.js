@@ -1,70 +1,39 @@
-document.addEventListener('contentReady', function () {
-
-  let stompClient = null;
-  const userName = "Usuario";
-  const userRole = "USER";
-  const currentChannelName = "default-channel";
-
-  const token = sessionStorage.getItem('token');
-
-  if (token) {
-    const userUrl = 'http://localhost:8004/service/getUserDetails';
-
-    fetch(userUrl, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
-      }
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('La respuesta de la red no fue correcta');
+async function checkOrCreateChannel(channelName) {
+    const response = await fetch(`http://localhost:8003/channels/getChannelByName/${channelName}`);
+    if (response.ok) {
+        const channel = await response.json();
+        return channel;
+    } else {
+        const newChannel = { name: channelName, type: "publico" };
+        const createResponse = await fetch('http://localhost:8003/channels/addChannel', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newChannel)
+        });
+        if (createResponse.ok) {
+            // Si se crea el canal correctamente, retornar el canal creado
+            const createdChannel = await createResponse.json();
+            return createdChannel;
+        } else {
+            // Manejar el caso en que no se pueda crear el canal
+            console.error('No se pudo crear el canal.');
+            return null;
         }
-        return response.json();
-      })
-      .then(data => {
-        userName.textContent = data.userName;
-        userRole = data.userRole[0].role;
-      })
-      .catch(error => {
-        console.error('Error al obtener los detalles del usuario:', error);
-      });
-  } else {
-    console.error('No hay token en sessionStorage');
-  }
+    }
+}
 
-  function connect() {
-    const socket = new SockJS('/ws');
-    stompClient = Stomp.over(socket);
-
-    stompClient.connect({}, function (frame) {
-      console.log('Connected: ' + frame);
-      stompClient.subscribe('/topic/messages', function (messageOutput) {
-        showMessage(JSON.parse(messageOutput.body));
-      });
-    });
-  }
-
-  function loadMessages(channelId) {
-    const url = `http://localhost:8003/messages/getMessageByChannel/${channelId}`;
-
-    fetch(url, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + token
-      }
+// Ejemplo de uso:
+const channelName = 'general';
+checkOrCreateChannel(channelName)
+    .then(channel => {
+        if (channel) {
+            console.log('El canal existe o se creó con éxito:', channel);
+        } else {
+            console.log('No se pudo obtener o crear el canal.');
+        }
     })
-      .then(response => response.json())
-      .then(messages => {
-        messages.forEach(message => showMessage(message));
-      })
-      .catch(error => {
-        console.error('Error al cargar los mensajes del canal:', error);
-      });
-  }
-
-  window.onload = connect;
-  loadMessages(1);
-});
+    .catch(error => {
+        console.error('Error al obtener o crear el canal:', error);
+    });
