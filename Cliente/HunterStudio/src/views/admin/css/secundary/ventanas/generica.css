@@ -27,7 +27,7 @@
     align-items: center;
     overflow-x: none;
     background-color: var(--black);
-    background-image: url(../../../../img/juegos/TWH/icono.jpg);
+    background-image: url(../../../../../img/juegos/TWH/icono.jpg);
     background-size: 100% 100%;
 }
 
