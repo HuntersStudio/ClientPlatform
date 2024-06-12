@@ -1,4 +1,4 @@
-document.addEventListener('contentReady', function(event) {
+(function () {
     let items = document.querySelectorAll('.slider .list .item');
     let next = document.getElementById('next');
     let prev = document.getElementById('prev');
@@ -7,18 +7,18 @@ document.addEventListener('contentReady', function(event) {
     let itemActive = 0;
 
 
-    next.onclick = function(){
+    next.onclick = function () {
         itemActive++;
-        if(itemActive >= contItem){
+        if (itemActive >= contItem) {
             itemActive = 0;
         }
         showSlider();
     }
 
-    prev.onclick = function(){
+    prev.onclick = function () {
         itemActive--;
-        if(itemActive < 0){
-            itemActive = contItem -1;
+        if (itemActive < 0) {
+            itemActive = contItem - 1;
         }
         showSlider();
     }
@@ -31,12 +31,12 @@ document.addEventListener('contentReady', function(event) {
 
         var elemento = document.querySelector(".slider .list .item.active");
 
-        if(elemento != null){
+        if (elemento != null) {
             let itemActiveOld = document.querySelector('.slider .list .item.active');
             let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
             itemActiveOld.classList.remove('active');
             thumbnailActiveOld.classList.remove('active');
-            
+
             // Añade la clase 'active' al ítem y miniatura activos
             items[itemActive].classList.add('active');
             thumbnails[itemActive].classList.add('active');
@@ -52,6 +52,6 @@ document.addEventListener('contentReady', function(event) {
             itemActive = index;
             showSlider();
         });
-});
+    });
 
-});
+})();

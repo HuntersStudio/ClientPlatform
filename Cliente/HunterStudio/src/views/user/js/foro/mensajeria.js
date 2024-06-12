@@ -1,73 +1,136 @@
-// Verifica si las variables ya están definidas
-if (typeof window.SockJS === 'undefined') {
-    window.SockJS = require('sockjs-client');
-}
+(async function() {
 
-if (typeof window.StompClient === 'undefined') {
-    window.StompClient = require('@stomp/stompjs').Client;
-}
+    let stompClient = null;
 
-(function() {
-    // Encapsula tu código para evitar la contaminación global
-    if (!window.myApp) {
-        window.myApp = {};
+    try {
+        await connectWebSocket();
+        const stompClient = getStompClient();
 
-        const socket = new window.SockJS('http://localhost:8003/websocket');
-        const stompClient = new window.StompClient({
-            webSocketFactory: () => socket,
-            reconnectDelay: 5000,
-            onConnect: (frame) => {
-                console.log('Connected: ' + frame);
-
-                // Suscribirse al tema "/topic/messages"
-                stompClient.subscribe('/topic/messages', (message) => {
-                    console.log("Mensaje recibido:", message);
-                    try {
-                        const parsedMessage = JSON.parse(message.body);
-                        showMessage(parsedMessage);
-                    } catch (error) {
-                        console.error("Error al analizar el mensaje:", error);
-                    }
-                });
-            },
-            onStompError: (frame) => {
-                console.error('Broker reported error: ' + frame.headers['message']);
-                console.error('Additional details: ' + frame.body);
-            }
+        stompClient.subscribe('/topic/messages', (message) => {
+            showMessage(JSON.parse(message.body));
         });
 
-        stompClient.activate();
+        console.log('WebSocket connection and subscription setup complete.');
+    } catch (error) {
+        console.error('Error setting up WebSocket connection:', error);
+    }
 
-        function sendMessage() {
+    const sendButton = document.getElementById('send');
+    const messageInput = document.getElementById('messageInput');
 
-            const from = "Marcos";
-            const text = document.getElementById('text').value;
+    sendButton.addEventListener('click', async () => {
+        const messageContent = messageInput.value.trim();
+        if (messageContent) {
+            try {
+                await sendMessageToServer(messageContent);
+                messageInput.value = '';
+            } catch (error) {
+                console.error('Error al enviar el mensaje:', error);
+            }
+        }
+    });
 
+    function connectWebSocket() {
+        const socket = new SockJS('http://localhost:8003/ws');
+        stompClient = Stomp.over(socket);
+
+        return new Promise((resolve, reject) => {
+            stompClient.connect({}, (frame) => {
+                console.log('Connected: ' + frame);
+                resolve(stompClient);
+            }, (error) => {
+                console.error('Error connecting to WebSocket:', error);
+                reject(error);
+            });
+        });
+    }
+
+    function getStompClient() {
+        if (!stompClient) {
+            throw new Error('WebSocket is not connected. Call connectWebSocket first.');
+        }
+        return stompClient;
+    }
+
+    async function showMessage(message) {
+        const messagesContainer = document.getElementById('messages');
+        const messageElement = document.createElement('div');
+        
+        console.log(message);
+
+        try {
+            const info = await getInfo();
             
-            const mensaje = {
-                from: from,
-                text: text
+            if (info.userName === message.body.sender) {
+                messageElement.classList.add('self');
+            }
+    
+            if (message.body.role === 'ADMIN') {
+                messageElement.classList.add('admin');
+            }
+
+            messageElement.classList.add('message');
+            messageElement.textContent = `${message.body.sender}: ${message.body.content}`;
+            messagesContainer.appendChild(messageElement);
+        } catch (error) {
+            console.error('Error obteniendo la información del usuario:', error);
+        }
+    }
+
+    async function sendMessageToServer(content) {
+        try {
+            const info = await getInfo();
+
+            if (!info || !info.userName || !info.role) {
+                console.error('Información de usuario incompleta:', info);
+                throw new Error('Información de usuario incompleta');
+            }
+
+            const messageDto = {
+                content: content,
+                sender: info.userName,
+                role: info.role,
+                channelName: 'general'
             };
 
-            stompClient.publish({
-                destination: '/app/chat',
-                body: JSON.stringify(mensaje)
+            const stompClient = getStompClient();
+            stompClient.send("/app/chat", {}, JSON.stringify(messageDto));
+        } catch (error) {
+            console.error('Error al enviar el mensaje:', error);
+        }
+    }
+
+    async function getInfo() {
+        const token = sessionStorage.getItem('token');
+
+        if (!token) {
+            console.error('No hay token en sessionStorage');
+            throw new Error('No hay token en sessionStorage');
+        }
+
+        const userUrl = 'http://localhost:8004/service/getUserDetails';
+
+        try {
+            const response = await fetch(userUrl, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                }
             });
-        }
 
-        function showMessage(message) {
-            const response = document.getElementById('messages');
-            if (response) {
-                const p = document.createElement('p');
-                p.appendChild(document.createTextNode(`${message.from}: ${message.text}`));
-                response.appendChild(p);
-            } else {
-                console.error("El elemento 'response' no se encontró en el DOM.");
+            if (!response.ok) {
+                throw new Error('La respuesta de la red no fue correcta');
             }
-        }
 
-        document.getElementById('send').addEventListener('click', () => {
-            sendMessage();
-        });
+            const data = await response.json();
+            return {
+                userName: data.userName,
+                role: data.userRoles[0].role
+            };
+        } catch (error) {
+            console.error('Error al obtener los detalles del usuario:', error);
+            throw error;
+        }
     }
 })();
