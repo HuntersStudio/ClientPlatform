@@ -1,4 +1,4 @@
-(async function() {
+document.addEventListener("contentReady",async () => {
     const channelName = 'general';
 
     try {
@@ -13,8 +13,10 @@
     }
 
     await cargarMensajes(channelName);
+    
+    await scrollToBottom();
 
-})();
+});
 
 async function checkOrCreateChannel(channelName) {
     const token = sessionStorage.getItem('token');
@@ -93,6 +95,8 @@ async function showMessage(message) {
         messageElement.classList.add('message');
         messageElement.textContent = `${message.body.sender}: ${message.body.content}`;
         messagesContainer.appendChild(messageElement);
+
+        await scrollToBottom(); // Desplazar hacia abajo después de añadir el mensaje
     } catch (error) {
         console.error('Error obteniendo la información del usuario:', error);
     }
@@ -130,4 +134,9 @@ async function getInfo() {
         console.error('Error al obtener los detalles del usuario:', error);
         throw error;
     }
+}
+
+async function scrollToBottom() {
+    const messagesContainer = document.getElementById('messages');
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
 }

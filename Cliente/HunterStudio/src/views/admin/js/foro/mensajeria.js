@@ -1,4 +1,4 @@
-(async function() {
+document.addEventListener("contentReady",async () => {
     let stompClient = null;
 
     try {
@@ -141,4 +141,4 @@
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
-})();
+});

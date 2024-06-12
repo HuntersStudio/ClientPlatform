@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(data => {
                 console.log(data);
 
-                localStorage.setItem("name", user);
                 sessionStorage.setItem("token", data.token);
 
                 const role = data.role[0].role;

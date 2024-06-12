@@ -1,5 +1,4 @@
-(async function() {
-
+document.addEventListener("contentReady",async () => {
     let stompClient = null;
 
     try {
@@ -55,16 +54,16 @@
     async function showMessage(message) {
         const messagesContainer = document.getElementById('messages');
         const messageElement = document.createElement('div');
-        
+
         console.log(message);
 
         try {
             const info = await getInfo();
-            
+
             if (info.userName === message.body.sender) {
                 messageElement.classList.add('self');
             }
-    
+
             if (message.body.role === 'ADMIN') {
                 messageElement.classList.add('admin');
             }
@@ -72,6 +71,9 @@
             messageElement.classList.add('message');
             messageElement.textContent = `${message.body.sender}: ${message.body.content}`;
             messagesContainer.appendChild(messageElement);
+
+            // Desplazar hacia abajo después de añadir el mensaje
+            await scrollToBottom();
         } catch (error) {
             console.error('Error obteniendo la información del usuario:', error);
         }
@@ -133,4 +135,10 @@
             throw error;
         }
     }
-})();
+
+    async function scrollToBottom() {
+        const messagesContainer = document.getElementById('messages');
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+});

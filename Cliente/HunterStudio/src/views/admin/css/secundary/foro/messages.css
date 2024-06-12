@@ -23,9 +23,10 @@
 }
 
 #messages .admin {
-    background-color: rgb(180, 180, 52);
+    background-color: rgb(155, 155, 48);
 }
 
 #messages .self {
+    background-color: var(--);
     align-self: flex-end;
 }
