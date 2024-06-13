@@ -1,4 +1,5 @@
 document.addEventListener('contentReady', function(event) {
+  
   const campoUser = document.querySelector('.user_name');
   const campoEmail = document.querySelector('.user_mail');
   const categoria = document.querySelector('.num_categoria');
