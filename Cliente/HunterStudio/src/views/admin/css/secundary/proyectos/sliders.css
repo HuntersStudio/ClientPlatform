@@ -41,7 +41,7 @@
 
 .card > .row > .icon {
     filter: brightness(1.5);
-    background-color: var(--black);
+    background-color: black;
     color: var(--platinum);
     border-radius: 50%;
     width: 50px;

@@ -1,17 +1,14 @@
-// Aqui se declaran las constantes 
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
 
-// Declaramos variables
 let mainWindow
 
 app.on('ready', () => {
-    // Evento de inicio de la aplicacion que llama a los html
     mainWindow = new BrowserWindow({
-        width: 1280, // Ancho predeterminado de la ventana
-        height: 720, // Altura predeterminada de la ventana
-        frame: false, // Quita el menu de arriba por defecto
+        width: 1280,
+        height: 720,
+        frame: false,
         webPreferences: {
             contextIsolation: false,
             nodeIntegration: true,
@@ -26,15 +23,12 @@ app.on('ready', () => {
         slashes: true
     }))
 
-    mainWindow.setMenu(null); // Ocultar herramientas de dev
-
-    // Aqui se cierra todo el programa al cerrar la ventana principal
+    mainWindow.setMenu(null);
     mainWindow.on('closed', () => {
         app.quit();
     })
 });
 
-// Escuchar solicitud para abrir una nueva ventana
 ipcMain.on('abrir-ventana', (event, enlace_ventana) => {
     const ventana = new BrowserWindow({
         frame: false,
@@ -49,15 +43,12 @@ ipcMain.on('abrir-ventana', (event, enlace_ventana) => {
     ventana.loadFile(enlace_ventana);
 });
 
-// Manejar el evento de minimizar ventana desde el proceso de renderizado
 ipcMain.on('minimizar-ventana', () => {
-    // Minimizar la ventana actual
     if (mainWindow) {
         mainWindow.minimize();
     }
 });
 
-// Manejar el evento de minimizar ventana desde el proceso de renderizado
 ipcMain.on('maximizar-ventana', () => {
     if (mainWindow.isMaximized()) {
         mainWindow.restore();
@@ -76,7 +67,6 @@ ipcMain.on('show-dev-tools', () => {
     }
 });
 
-// Redirigir al login si caduca el token
 ipcMain.on('redirect-to-login', () => {
     mainWindow.loadFile('login.html');
 });

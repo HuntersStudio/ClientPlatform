@@ -1,4 +1,4 @@
-document.addEventListener('contentReady', function(event) {
+(function() {
 
   const dataPaymentMethods = {
     labels: ['Paypal', 'Tarjeta de Crédito', 'Transferencias'],
@@ -67,4 +67,4 @@ document.addEventListener('contentReady', function(event) {
     ...config,
     data: dataUserReviews
   });
-});
+})();

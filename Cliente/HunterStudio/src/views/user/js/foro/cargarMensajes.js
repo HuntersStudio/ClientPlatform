@@ -1,4 +1,4 @@
-document.addEventListener("contentReady",async () => {
+(async function() {
     const channelName = 'general';
 
     try {
@@ -16,7 +16,7 @@ document.addEventListener("contentReady",async () => {
     
     await scrollToBottom();
 
-});
+})();
 
 async function checkOrCreateChannel(channelName) {
     const token = sessionStorage.getItem('token');

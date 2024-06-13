@@ -1,4 +1,4 @@
-document.addEventListener("contentReady",async () => {
+(async function() {
     let stompClient = null;
 
     try {
@@ -16,6 +16,13 @@ document.addEventListener("contentReady",async () => {
 
     const sendButton = document.getElementById('send');
     const messageInput = document.getElementById('messageInput');
+
+    messageInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            sendButton.click();
+        }
+    });
 
     sendButton.addEventListener('click', async () => {
         const messageContent = messageInput.value.trim();
@@ -72,7 +79,6 @@ document.addEventListener("contentReady",async () => {
             messageElement.textContent = `${message.body.sender}: ${message.body.content}`;
             messagesContainer.appendChild(messageElement);
 
-            // Desplazar hacia abajo después de añadir el mensaje
             await scrollToBottom();
         } catch (error) {
             console.error('Error obteniendo la información del usuario:', error);
@@ -140,5 +146,4 @@ document.addEventListener("contentReady",async () => {
         const messagesContainer = document.getElementById('messages');
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
-
-});
+})();

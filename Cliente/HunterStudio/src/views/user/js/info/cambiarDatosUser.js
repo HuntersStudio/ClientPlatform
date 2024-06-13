@@ -1,15 +1,15 @@
 (function () {
     const changeMailButton = document.querySelector(".change_mail");
     const userMailInput = document.querySelector(".user_mail");
-    const loadingGif = document.querySelector(".loading-gif");
 
     changeMailButton.addEventListener("click", function () {
         if (changeMailButton.textContent === "Confirmar") {
-            const url = 'http://localhost:8004/service/updateMail';
+
+            console.log(userMailInput.value);   
+
+            const url = 'http://localhost:8004/service/updateMail/' + userMailInput.value;
             const token = sessionStorage.getItem('token');
 
-            // Mostrar el GIF de carga
-            loadingGif.style.display = "absolute";
 
             fetch(url, {
                 method: 'POST',
@@ -17,24 +17,23 @@
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + token
                 },
-                body: JSON.stringify({ mail: userMailInput.value })
             })
-            .then(response => response.json())
+            .then(response => {
+                if (response.ok) {
+                    return { success: true };
+                } else {
+                    throw new Error('Error en la solicitud');
+                }
+            })
             .then(data => {
-                // Ocultar el GIF de carga
-                loadingGif.style.display = "none";
-
                 if (data.success) {
                     changeMailButton.textContent = "Cambiar Correo";
                     userMailInput.readOnly = true;
                 } else {
-                    alert("Error al cambiar el correo: " + data.message);
+                    console.log("Error al cambiar el correo");
                 }
             })
             .catch(error => {
-                // Ocultar el GIF de carga
-                loadingGif.style.display = "none";
-
                 console.error("Error:", error);
                 alert("Error al cambiar el correo. Por favor, inténtelo de nuevo.");
             });
