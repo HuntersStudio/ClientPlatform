@@ -27,8 +27,12 @@
         <div class="datos">
             <div class="mail">
                 <p>
-                    Correo:<span class="user_mail">mail@mail.com</span>
-                    <button class="change_mail">Cambiar Correo</button>
+                    Correo:
+                    <input class="user_mail" value="mail@mail.com" readonly>
+                    <button class="change_mail">
+                        Cambiar Correo
+                        <img class="loading-gif" src="../../img/loading/loading.svg" alt="Loading" style="display: none; width: 30px; height: 30px;">
+                    </button>
                 </p>
             </div>
 
@@ -64,6 +68,7 @@
         </div>
     </div>
 
+    <script src="js/info/cambiarDatosUser.js"></script>
     <script src="js/info/cargarDatosUser.js"></script>
 
 </body>
