@@ -1,6 +1,7 @@
 const { app, BrowserWindow, Menu, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
+const { exec } = require('child_process');
 
 let mainWindow
 
@@ -13,7 +14,8 @@ app.on('ready', () => {
             contextIsolation: false,
             nodeIntegration: true,
             nodeIntegrationInWorker: true,
-            enableRemoteModule: true
+            enableRemoteModule: true,
+            preload: path.join('preload.js')
         }
     });
 
@@ -70,3 +72,14 @@ ipcMain.on('show-dev-tools', () => {
 ipcMain.on('redirect-to-login', () => {
     mainWindow.loadFile('login.html');
 });
+
+ipcMain.on('execute-exe', (event, arg) => {
+    exec(arg, (error, stdout, stderr) => {
+      if (error) {
+        console.error(`exec error: ${error}`);
+        return;
+      }
+      console.log(`stdout: ${stdout}`);
+      console.error(`stderr: ${stderr}`);
+    });
+  });
