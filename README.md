@@ -37,6 +37,10 @@ Para ejecutar la plataforma, sigue estos pasos:
    ```bash
    npm start
    ```
+<p align="center">
+  <img src="Images/CreativeHuntersPlatform.png" alt="Sección 'Mundo' de la Plataforma Cliente" width="600"/>
+</p>
+
 
 ## Nota
 
