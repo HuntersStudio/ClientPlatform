@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../css/primary/navigation_bar.css" />
+    <link rel="stylesheet" href="../../css/primary/container.css" />
+
+</head>
+<body>
+    <div class="body">
+        <aside class="sub-menu">
+            <ul class="sub-list">
+                <li><a id="nav_bar_clicked" class="list-item" href="#" onclick="loadContent('../secundary/news/publications.html', 'contex'); loadList(this);">Publicaciones</a></li>
+                <li><a class="list-item" href="#" onclick="loadList(this);">The Wandering Hunter</a></li>
+                <li><a class="list-item" href="#" onclick="loadList(this);">Futuros proyects...</a></li>
+            </ul>
+        </aside>
+
+        <div class="contex"></div>
+        
+    </div>
+
+    <script>
+        loadContent('../secundary/news/publications.html', 'contex');
+    </script>
+</body>
+</html>

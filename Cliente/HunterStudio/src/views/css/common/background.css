@@ -1,0 +1,27 @@
+@import url(./colors.css);
+
+.background {
+    /* background-image: linear-gradient(#051327, #000); Posible fondo */
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+.space {
+    width: var(--size);
+    height: var(--size);
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: var(--space-layer);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .75;
+    animation: moveStars var(--duration) linear infinite;
+}
+
+
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100vh); }
+}

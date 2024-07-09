@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/secundary/windows/windows_generic.css" />
+    <link rel="stylesheet" href="../../css/secundary/windows/characters_win.css" />
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="mainApp">
+        <button id="close-btn">
+            <i class="fi fi-rr-cross"></i>
+        </button>
+
+        <!-- CONTENIDO -->
+        <div class="personaje">
+            <div class="card">
+                <img class="photo" src="../../../../../assets/images/skaya/characters/dark_rider-character.webp" alt="">
+                <img class="name" src="../../../../../assets/images/skaya/characters/dark_rider-title.png" alt="">
+            </div>
+            <div class="lore">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vehicula velit vitae efficitur lacinia.
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur
+                suscipit justo a semper pharetra. Nulla facilisi. Nam nec interdum risus. Mauris ut lorem libero.
+                Aliquam erat volutpat. Fusce ut leo nec justo ultricies tristique. Vivamus in risus ut nisi dapibus
+                tempus. Phasellus id lectus non lectus bibendum tincidunt. Cras tincidunt nisi vel risus finibus, eget
+                ullamcorper nulla fermentum. Sed tincidunt lacus non turpis consequat, quis ultrices nisi efficitur. Sed
+                placerat convallis sapien, at vestibulum odio efficitur et. Suspendisse potenti. Sed volutpat quam vitae
+                sapien sodales consequat. Ut non dictum lorem. Nunc non pulvinar ex.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('close-btn').addEventListener('click', () => {
+            // Cerrar la ventana actual
+            window.close();
+        });
+    </script>
+
+</body>
+
+</html>

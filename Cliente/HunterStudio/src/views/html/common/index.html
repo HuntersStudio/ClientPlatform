@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- npm install electron axios socket.io-client   CLIENTE -->
+
+    <!-- https://www.youtube.com/watch?v=GEXhlGH7ylE INSTALADOR -->
+    <!-- https://www.youtube.com/watch?v=6OcAoXr40oE CONFIGURAR LA BARRA DE ARRIBA -->
+    <!-- https://www.youtube.com/watch?v=2Nmi1sXu12U CONFIGURAR MODO OSCURO Y CLARO -->
+    <!-- https://www.youtube.com/watch?v=xPgH1LbAa-Q CARDS ANIMADAS CON CSS -->
+
+    <!-- https://elements.envato.com/es/vanderick-fantasy-game-font-76K5FJA?_ga=2.108011781.680894902.1713259122-1910407575.1713259122&language_code=es&utm_nooverride=1 POSIBLE FUENTE GUAPA-->
+
+    <!--
+        forum
+        https://www.youtube.com/watch?v=Hzgqg4zVWdY MENSAJERIA ELECTRON
+    -->
+
+    <!--
+        API REST
+        https://www.youtube.com/watch?v=M7lhQMzzHWU
+        https://youtu.be/vTu2HQrXtyw?si=Nmrq3Dt_l4UPF8D8
+        https://youtu.be/cXvDDvX16RM?si=MxMV3N2FCjzWBhW1
+        https://www.youtube.com/watch?v=0wTsLRxS3gA INICIO DE SESION SEGURO
+    
+        CONSUMIR LA API REST
+        https://www.youtube.com/watch?v=2Xm9P_tXtK8
+        https://www.youtube.com/watch?v=k8xQcZz3ANE
+    -->
+
+    <!--
+        APLICACION DE REPARTO IDEAS
+        https://youtu.be/q_WkXGUn4ao?si=zOKmvnvBfSs2pwMM GOOGLE EN LA APP CON JS
+    -->
+    
+
+    <!-- FUENTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap">
+
+    <!-- ICONOS -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'> <!-- Corazon, X -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-rounded/css/uicons-solid-rounded.css'> <!-- Persona -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css'> <!-- Casa -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-thin-straight/css/uicons-thin-straight.css'> <!-- Flechas -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-bold-rounded/css/uicons-bold-rounded.css'> <!-- Ojo -->
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../css/common/main.css" />
+    <link rel="stylesheet" href="../../css/common/menu.css" />
+    <link rel="stylesheet" href="../../css/common/background.css" />
+    <link rel="stylesheet" href="../../css/common/top_bar.css" />
+</head>
+
+<body>
+
+    <div class="mainApp">
+        <div class="top-bar">
+            <div class="title-bar">
+                <button id="ShowHidenMenus" class="toggleButton">
+                    <ul>
+                        <li>
+                            <i class="fi fi-sr-align-justify"></i>
+                            <ul class="list-menu">
+                                <li id="reload-btn"><a href="#">Reload</a></li>
+                                <li><a href="#" onclick="generate_window('../users/html/ventanas/settings.html');"> Settings</a></li>
+                                <li><a id="dev-tools-btn" href="#">Dev Tools</a></li>
+                                <li><a id="exit-btn" href="../login.html">Exit</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </button>
+
+                <div class="title">
+                    Hunter Studio
+                </div>
+            </div>
+            <div class="title-bar-button">
+                <button id="minimized-btn" class="top-btn minimized-btn">
+                    <i class="fi fi-br-window-minimize"></i>
+                </button>
+                <button id="maximized-btn" class="top-btn maximized-btn">
+                    <i class="fi fi-rs-window-maximize"></i>
+                </button>
+                <button id="close-btn" class="top-btn close-btn">
+                    <i class="fi fi-rr-cross"></i>
+                </button>
+            </div>
+        </div>
+        <div class="menu">
+            <!-- <ul id="lista-menu"> -->
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="#" onclick="loadContent('../primary/proyects.html', 'container'); loadList(this);">Mundo</a>
+                </li>
+                <li><a href="#" onclick="loadContent('../primary/publications.html', 'container'); loadList(this);">Noticias</a>
+                </li>
+                <li><a href="#" onclick="loadContent('../primary/forum.html', 'container'); loadList(this);">forum</a>
+                </li>
+                <li><a href="#" onclick="loadContent('../primary/users.html', 'container'); loadList(this);">users</a>
+                </li>
+            </ul>
+        </div>
+        <div class="content-area">
+            <div class="background">
+                <div class="space space-1"></div>
+                <div class="space space-2"></div>
+                <div class="space space-3"></div>
+            </div>
+        
+            <div class="container">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- script para cargar el html en el container indicado al clicar en las listas -->
+    <script src="../../js/common/load-html.js"></script>
+    <script src="../../js/common/background.js"></script>
+    <script src="../../js/common/top_bar.js"></script>
+    <script src="../../js/common/windows.js"></script>
+</body>
+</html>

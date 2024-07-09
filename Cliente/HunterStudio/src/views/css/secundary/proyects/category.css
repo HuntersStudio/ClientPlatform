@@ -1,0 +1,63 @@
+@import url(../../common/colors.css);
+
+.category {
+    margin-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    margin-bottom: 100px;
+    overflow-x: hidden;
+}
+
+/* Cambiar el color de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 5px; /* Ancho de la barra de desplazamiento */
+    margin-right: 150px;
+    background-color: rgb(0, 0, 0, 0); /* Color de fondo */
+}
+
+/* Cambiar el color del "thumb" (la parte deslizante) */
+::-webkit-scrollbar-thumb {
+    background-color: var(--platinum); /* Color del "thumb" */
+    border-radius: 6px; /* Radio de borde del "thumb" */
+}
+
+.category-1 {
+    position: absolute;
+    height: 100%;
+    align-items: center;
+}
+
+.category-2 {
+    position: absolute;
+    margin-top: 110%;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.card[for="c1"] {
+    background-image: url(../../../../../../assets/images/skaya/elementos/agua.jpg);
+}
+
+.card[for="c2"] {
+    background-image: url(../../../../../../assets/images/skaya/elementos/fuego.jpg);
+}
+
+.card[for="c3"] {
+    background-image: url(../../../../../../assets/images/skaya/elementos/aire.jpg);
+}
+
+.card[for="c4"] {
+    background-image: url(../../../../../../assets/images/skaya/elementos/roca.jpg);
+}
+
+.card[for="c5"] {
+    background-image: url(../../../../../../assets/images/skaya/elementos/vida.jpg);
+}
+
+.card[for="c6"] {
+    background-image: url(../../../../../../assets/images/skaya/elementos/electricidad.jpg);
+}
