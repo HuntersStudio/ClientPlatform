@@ -2,24 +2,29 @@
   "name": "creative_hunter",
   "productName": "HuntersStudios",
   "version": "1.0.0",
-  "main": "src/views/js/main.js",
+  "main": "src/js/main.js",
   "scripts": {
-    "start": "electron src/views/js/main.js",
-    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron Tutorial App\"",
-    "package-linux": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+    "start": "electron src/js/main.js",
+    "package": "npm run package-win && npm run package-mac && npm run package-linux",
+    "package-mac": "electron-packager . creative_hunter --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . creative_hunter --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"HuntersStudios\"",
+    "package-linux": "electron-packager . creative_hunter --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds",
+    "build": "electron-builder"
   },
   "keywords": [],
   "author": "The Hunter Studios",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.8",
+    "@stomp/stompjs": "^7.0.0",
+    "axios": "^1.7.2",
     "electron": "^28.1.2",
     "electron-packager": "^17.1.2",
-    "socket.io-client": "^4.7.5"
+    "socket.io-client": "^4.7.5",
+    "sockjs-client": "^1.6.1"
   },
   "devDependencies": {
-    "electron-builder": "^24.9.1",
+    "electron-builder": "^24.13.3",
+    "electron-package": "^0.1.0",
     "upx": "^1.0.6"
   },
   "description": ""

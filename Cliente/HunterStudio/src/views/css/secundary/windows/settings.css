@@ -1,0 +1,11 @@
+@import url(../../common/colors.css);
+
+.content {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: start;
+    text-align: center;
+    display: flex;
+    border: 1px solid var(--platinum);
+}

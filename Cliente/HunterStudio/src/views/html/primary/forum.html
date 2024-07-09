@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/primary/navigation_bar.css" />
+    <link rel="stylesheet" href="../../css/primary/container.css" />
+    <title>Document</title>
+</head>
+<body>
+    <div class="body">
+        <aside class="sub-menu">
+            <ul class="sub-list">
+                <li><a id="nav_bar_clicked" class="list-item" href="#" onclick="loadContent('../secundary/forum/global.html', 'contex'); loadList(this);">Global</a></li>
+                <li><a class="list-item" href="#" onclick="loadContent('../secundary/forum/instagram.html', 'contex'); loadList(this);">Instagram</a></li>
+                <li><a class="list-item" href="#" onclick="loadContent('../secundary/forum/x.html', 'contex'); loadList(this);">X</a></li>
+                <li><a class="list-item" href="#" onclick="loadContent('../secundary/forum/facebook.html', 'contex'); loadList(this);">Facebook</a></li>
+            </ul>
+        </aside>
+
+        <div class="contex"></div>
+    </div>
+
+    <script>
+        loadContent('../secundary/forum/global.html', 'contex');
+    </script>
+
+</body>
+</html>
